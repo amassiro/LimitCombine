@@ -23,16 +23,14 @@ using namespace RooFit;
 class HiggsWidth : public RooAbsPdf {
 protected:
  
- RooRealProxy kd ;
- RooRealProxy fai ;
+ RooRealProxy _GoverGSM ;
  RooListProxy _coefList ;  //  List of funcficients
  TIterator* _coefIter ;    //! Iterator over funcficient lis
  Double_t evaluate() const ;
 public:
  HiggsWidth() {} ;
  HiggsWidth(const char *name, const char *title,
-                      RooAbsReal& _kd,
-                      RooAbsReal& _fai,
+                      RooAbsReal& GoverGSM,
                       const RooArgList& inCoefList);
  
  HiggsWidth(const HiggsWidth& other, const char* name=0) ;
