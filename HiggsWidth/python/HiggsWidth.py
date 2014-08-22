@@ -2,7 +2,7 @@ from HiggsAnalysis.CombinedLimit.PhysicsModel import *
  
 ### This is the base python class to study the SpinZero structure
  
-class AnomalousCouplings(PhysicsModel):
+class HiggsWidth(PhysicsModel):
     def __init__(self):
         self.mHRange = []
         self.muAsPOI = False
@@ -70,7 +70,7 @@ class AnomalousCouplings(PhysicsModel):
        
         self.modelBuilder.doSet("POI",poi)
        
-spinZeroHiggs = AnomalousCouplings()
+spinZeroHiggs = HiggsWidth()
 
 
      

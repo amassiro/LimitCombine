@@ -1,5 +1,5 @@
 #include "Riostream.h"
-#include "../interface/AnomalousCouplings.h"
+#include "../interface/HiggsWidth.h"
 #include "RooAbsReal.h"
 #include "RooAbsCategory.h"
 #include <math.h>
@@ -11,9 +11,9 @@
 using namespace TMath;
 
 
-ClassImp(AnomalousCouplings)
+ClassImp(HiggsWidth)
  
-AnomalousCouplings::AnomalousCouplings(const char *name, const char *title,
+HiggsWidth::HiggsWidth(const char *name, const char *title,
                                              RooAbsReal& _kd,
                                              RooAbsReal& _fai,
                                              const RooArgList& inCoefList):
@@ -27,7 +27,7 @@ AnomalousCouplings::AnomalousCouplings(const char *name, const char *title,
  RooAbsArg* func;
  while((func = (RooAbsArg*)coefIter->Next())) {
   if (!dynamic_cast<RooAbsReal*>(func)) {
-   coutE(InputArguments) << "ERROR: :AnomalousCouplings(" << GetName() << ") funcficient " << func->GetName() << " is not of type RooAbsReal" << endl;
+   coutE(InputArguments) << "ERROR: :HiggsWidth(" << GetName() << ") funcficient " << func->GetName() << " is not of type RooAbsReal" << endl;
    assert(0);
   }
   _coefList.add(*func) ;
@@ -38,7 +38,7 @@ AnomalousCouplings::AnomalousCouplings(const char *name, const char *title,
 }
 
  
-AnomalousCouplings::AnomalousCouplings(const AnomalousCouplings& other, const char* name) :  
+HiggsWidth::HiggsWidth(const HiggsWidth& other, const char* name) :  
  RooAbsPdf(other,name),
  kd("kd",this,other.kd),
  fai("fai",this,other.fai),
@@ -49,7 +49,7 @@ AnomalousCouplings::AnomalousCouplings(const AnomalousCouplings& other, const ch
  }
  
  
-Double_t AnomalousCouplings::evaluate() const
+Double_t HiggsWidth::evaluate() const
 {
    double value = 0.;
  
@@ -72,7 +72,7 @@ Double_t AnomalousCouplings::evaluate() const
    
 }
  
-Int_t AnomalousCouplings::getAnalyticalIntegral(RooArgSet& allVars, RooArgSet& analVars, const char* /*rangeName*/) const
+Int_t HiggsWidth::getAnalyticalIntegral(RooArgSet& allVars, RooArgSet& analVars, const char* /*rangeName*/) const
 {
  
   if (matchArgs(allVars,analVars,kd)) return 4 ;
@@ -81,7 +81,7 @@ Int_t AnomalousCouplings::getAnalyticalIntegral(RooArgSet& allVars, RooArgSet& a
  
 }
  
-Double_t AnomalousCouplings::analyticalIntegral(Int_t code, const char* rangeName) const
+Double_t HiggsWidth::analyticalIntegral(Int_t code, const char* rangeName) const
 {
   double Int_T1  = dynamic_cast<const RooHistFunc*>(_coefList.at(0))-> analyticalIntegral(1000);
   double Int_T2  = dynamic_cast<const RooHistFunc*>(_coefList.at(1))-> analyticalIntegral(1000);
