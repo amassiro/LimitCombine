@@ -1,6 +1,6 @@
 from HiggsAnalysis.CombinedLimit.PhysicsModel import *
  
-### This is the base python class to study the SpinZero structure
+### This is the base python class to study the HiggsWidth from off-shell events
  
 class HiggsWidth(PhysicsModel):
     def __init__(self):
@@ -70,7 +70,7 @@ class HiggsWidth(PhysicsModel):
        
         self.modelBuilder.doSet("POI",poi)
        
-spinZeroHiggs = HiggsWidth()
+higgsWidth = HiggsWidth()
 
 
      
