@@ -1,0 +1,15 @@
+Combination of hwwof_0j_8TeV.txt  hwwof_1j_8TeV.txt
+imax 1 number of bins
+jmax * number of processes minus 1
+kmax * number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+bin          ch1 
+observation  3000
+----------------------------------------------------------------------------------------------------------------------------------
+bin                                                           ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1         ch1  
+process                                                       ggH_ALT     ZH          qqH         qqbarH_ALT  WH          ggH         qqWW        Zjets       qqWW2j      WjetsE      Wgamma      Top         WjetsM      ggWW        VV          Wg3l        Ztt  
+process                                                       -5          -4          -3          -2          -1          0           1           2           3           4           5           6           7           8           9           10          11   
+rate                                                          0.00    0.0000      0.0000      0.0000      0.0000      221.2890    3953.4140   0.0000      0.2880      283.0950    114.9720    520.2750    332.2970    209.7650    131.9120    166.9230    46.0370  
+----------------------------------------------------------------------------------------------------------------------------------
+BRhiggs_hvv             lnN                                   1.0423      1.0423      -           1.0423      1.0423      -           -           -           -           -           -           -           -           -           -           -           -    
+CMS_hww2l2n_QCDscale_ggVV   lnN                               -           -           -           -           -           -           -           -           -           -           -           -           -           1.3         -           -           -    
