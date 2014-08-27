@@ -55,8 +55,6 @@ Double_t HiggsWidth::evaluate() const
 //               1.875 -1.250  0.375
    
    
-   
-   
    Double_t P1  = dynamic_cast<const RooHistFunc*>(_coefList.at(0))->getVal();
    Double_t P9  = dynamic_cast<const RooHistFunc*>(_coefList.at(1))->getVal();
    Double_t P25 = dynamic_cast<const RooHistFunc*>(_coefList.at(2))->getVal();
