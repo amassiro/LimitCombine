@@ -6,7 +6,7 @@ class Higgswidth(PhysicsModel):
     def __init__(self):
         self.mHRange = []
         self.GGsmfixed = False
-        self.RVRFfixed = False
+        self.RVRFfixed = False # True   # False
         self.GGsmRVRFfixed = False
         self.is2l2nu = False
         self.poiMap = []
