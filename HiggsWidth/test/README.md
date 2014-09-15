@@ -71,6 +71,10 @@ Results
     
     
     
+    '--algo=grid -v 7 -S 1 --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1 --freezeNuisances RV,RF
+    --redefineSignalPOI CMS_zz4l_GGsm --floatOtherPOI=1 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60  -t -1 --expectSignal=1
+
+
     
     
 Plot
