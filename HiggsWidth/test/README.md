@@ -44,7 +44,6 @@ Results
     tar -xf 2jetDF8TeV.tgz
     mv datacards/ datacards-2j/
     
-    mv datacards/ datacards-2j/
     combineCards.py   of0j=datacards-0j/hww-19.47fb.mH125.of_0j_shape.txt \
                       of1j=datacards-1j/hww-19.47fb.mH125.of_1j_shape.txt \
                       of2j=datacards-2j/hww-19.47fb.mH125.of_2j_shape.txt \
@@ -88,6 +87,8 @@ Plot
     
 
 Comparison and combination:
+
+    r99t higgsCombineTest.MultiDimFit.2j.root  LimitCombine/HiggsWidth/test/draw.cxx
 
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.1j.root \
