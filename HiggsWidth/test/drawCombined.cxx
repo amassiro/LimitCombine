@@ -1,5 +1,7 @@
 
 {
+
+ #include "tools.h"
  
  limit_0   = (TTree*) _file0->Get("limit");
  limit_1   = (TTree*) _file1->Get("limit");
@@ -7,7 +9,7 @@
  limit_012 = (TTree*) _file3->Get("limit");
  
  int n;
-
+ 
  n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_0 = new TGraph(n,limit_0->GetV2(),limit_0->GetV1());
  graphScan_0->SetTitle("");
@@ -15,8 +17,8 @@
  graphScan_0->SetLineWidth(2);
  graphScan_0->SetMarkerColor(kBlue);
  graphScan_0->SetLineColor(kBlue);
-
-
+ 
+ 
  n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
  graphScan_1->SetTitle("");
@@ -24,8 +26,8 @@
  graphScan_1->SetLineWidth(2);
  graphScan_1->SetMarkerColor(kBlack);
  graphScan_1->SetLineColor(kBlack);
-
-
+ 
+ 
  n =  limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_2 = new TGraph(n,limit_2->GetV2(),limit_2->GetV1());
  graphScan_2->SetTitle("");
@@ -33,8 +35,8 @@
  graphScan_2->SetLineWidth(2);
  graphScan_2->SetMarkerColor(kGreen);
  graphScan_2->SetLineColor(kGreen);
-
-
+ 
+ 
  n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_012 = new TGraph(n,limit_012->GetV2(),limit_012->GetV1());
  graphScan_012->SetTitle("");
@@ -54,7 +56,7 @@
  graphScan_1  ->Draw("l");
  graphScan_2  ->Draw("l");
  graphScan_012->Draw("l");
-
+ 
  //---- legend
  
  leg = new TLegend(0.1,0.7,0.48,0.9);
@@ -64,25 +66,29 @@
  leg->AddEntry(graphScan_012,"0 jet + 1 jet + 2 jet","l");
  leg->SetFillColor(0);
  leg->Draw();
-
  
-//  2deltaLogL = 1.00
-//  2deltaLogL = 3.84
  
-//  std::cout << " max X = " << (limit_012->GetV2())[n-1] << std::endl;
+ //  2deltaLogL = 1.00
+ //  2deltaLogL = 3.84
  
+ //  std::cout << " max X = " << (limit_012->GetV2())[n-1] << std::endl;
+ 
+ double value_x_1sigma = findCrossingOfScan1D(*graphScan_012, 1.00);
+ std::cout << " value_x_1sigma = " << value_x_1sigma << std::endl;
+  
+  
  TLine *line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n-1],1.0);
  line1->SetLineWidth(2);
  line1->SetLineStyle(2);
  line1->Draw(); 
-
+ 
  TLine *line2 = new TLine(0.0,3.84,(limit_012->GetV2())[n-1],3.84);
  line2->SetLineWidth(2);
  line2->SetLineStyle(2);
  line2->Draw();
  
  gPad->SetGrid();
-
+ 
  
 }
 
