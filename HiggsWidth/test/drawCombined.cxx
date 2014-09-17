@@ -69,17 +69,21 @@
 //  2deltaLogL = 1.00
 //  2deltaLogL = 3.84
  
- TLine *line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n],1.0);
+//  std::cout << " max X = " << (limit_012->GetV2())[n-1] << std::endl;
+ 
+ TLine *line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n-1],1.0);
  line1->SetLineWidth(2);
  line1->SetLineStyle(2);
  line1->Draw(); 
 
- TLine *line2 = new TLine(0.0,3.84,(limit_012->GetV2())[n],3.84);
+ TLine *line2 = new TLine(0.0,3.84,(limit_012->GetV2())[n-1],3.84);
  line2->SetLineWidth(2);
  line2->SetLineStyle(2);
  line2->Draw();
  
  gPad->SetGrid();
+
+ 
 }
 
 
