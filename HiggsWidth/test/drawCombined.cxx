@@ -72,10 +72,7 @@
  //  2deltaLogL = 3.84
  
  //  std::cout << " max X = " << (limit_012->GetV2())[n-1] << std::endl;
- 
- double value_x_1sigma = findCrossingOfScan1D(*graphScan_012, 1.00);
- std::cout << " value_x_1sigma = " << value_x_1sigma << std::endl;
-  
+
   
  TLine *line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n-1],1.0);
  line1->SetLineWidth(2);
@@ -86,6 +83,23 @@
  line2->SetLineWidth(2);
  line2->SetLineStyle(2);
  line2->Draw();
+ 
+ 
+ 
+ double value_x_1sigma = findCrossingOfScan1D(*graphScan_012, 1.00);
+ std::cout << " value_x_1sigma = " << value_x_1sigma << std::endl;
+ double value_x_2sigma = findCrossingOfScan1D(*graphScan_012, 3.84);
+ std::cout << " value_x_2sigma = " << value_x_2sigma << std::endl;
+ 
+ TLine *vline1 = new TLine(value_x_1sigma,0.0,value_x_1sigma,1.0);
+ vline1->SetLineWidth(2);
+ vline1->SetLineStyle(2);
+ vline1->Draw(); 
+ 
+ TLine *vline2 = new TLine(value_x_2sigma,0.0,value_x_2sigma,3.84);
+ vline2->SetLineWidth(2);
+ vline2->SetLineStyle(2);
+ vline2->Draw();
  
  gPad->SetGrid();
  
