@@ -3,7 +3,7 @@ Example
 
 where:
 
-    /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
+    cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
 
 
 Prepare and run:
@@ -21,8 +21,8 @@ Prepare and run:
 
     scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/Hwidth/0jetDF8TeV.tgz ./
     tar -xf 0jetDF8TeV.tgz
-    text2workspace.py -m 125.6 datacards/hww-19.47fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu           -o      model_hwwlvlv.root
-    text2workspace.py -m 125.6 datacards/hww-19.47fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRVRFfixed  -o      model_hwwlvlv.root
+    text2workspace.py -m 125.6 datacards/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu           -o      model_hwwlvlv.root
+    text2workspace.py -m 125.6 datacards/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRVRFfixed  -o      model_hwwlvlv.root
 
     combine -M MultiDimFit model_hwwlvlv.root --algo=grid --points 200  -m 125.6                          --saveToys  -n Obs_nLL_scan --setPhysicsModelParameterRanges CMS_ww2l2v_GGsm=0.000001,100
     combine -M MultiDimFit model_hwwlvlv.root --algo=grid --points 200  -m 125.6   -t -1 --expectSignal=1 --saveToys                  --setPhysicsModelParameterRanges CMS_ww2l2v_GGsm=0.000001,100
@@ -49,17 +49,17 @@ Results
     tar -xf 2jetDF8TeV.tgz
     rm -r datacards-2j/; mv datacards/ datacards-2j/
     
-    combineCards.py   of0j=datacards-0j/hww-19.47fb.mH125.of_0j_shape.txt \
-                      of1j=datacards-1j/hww-19.47fb.mH125.of_1j_shape.txt \
-                      of2j=datacards-2j/hww-19.47fb.mH125.of_2j_shape.txt \
+    combineCards.py   of0j=datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt \
+                      of1j=datacards-1j/hww-19.36fb.mH125.of_1j_shape.txt \
+                      of2j=datacards-2j/hww-19.36fb.mH125.of_2j_shape.txt \
                       >   hwidth_012jet.txt
     
     
 RVRFfixed
 
-    text2workspace.py -m 125.6 datacards-0j/hww-19.47fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_0j_cv_cf_1.root    
-    text2workspace.py -m 125.6 datacards-1j/hww-19.47fb.mH125.of_1j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_1j_cv_cf_1.root    
-    text2workspace.py -m 125.6 datacards-2j/hww-19.47fb.mH125.of_2j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_2j_cv_cf_1.root    
+    text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_0j_cv_cf_1.root    
+    text2workspace.py -m 125.6 datacards-1j/hww-19.36fb.mH125.of_1j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_1j_cv_cf_1.root    
+    text2workspace.py -m 125.6 datacards-2j/hww-19.36fb.mH125.of_2j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_2j_cv_cf_1.root    
     text2workspace.py -m 125.6 hwidth_012jet.txt                              -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_012j_cv_cf_1.root  
 
     
@@ -80,9 +80,9 @@ RVRFfixed
 all floating
     
 
-    text2workspace.py -m 125.6 datacards-0j/hww-19.47fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j.root
-    text2workspace.py -m 125.6 datacards-1j/hww-19.47fb.mH125.of_1j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_1j.root
-    text2workspace.py -m 125.6 datacards-2j/hww-19.47fb.mH125.of_2j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_2j.root
+    text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j.root
+    text2workspace.py -m 125.6 datacards-1j/hww-19.36fb.mH125.of_1j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_1j.root
+    text2workspace.py -m 125.6 datacards-2j/hww-19.36fb.mH125.of_2j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_2j.root
     text2workspace.py -m 125.6 hwidth_012jet.txt                              -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_012.root
 
     combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 200  -m 125.6   -t -1 --expectSignal=1 --saveToys                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,50     
@@ -115,6 +115,16 @@ Plot
     
     r99t higgsCombineTest.MultiDimFit.mH125.6.123456.root  LimitCombine/HiggsWidth/test/draw2D.cxx
     
+    r99t higgsCombineTest.MultiDimFit.0j.root  HiggsWidth/test/draw.cxx
+    r99t higgsCombineTest.MultiDimFit.1j.root  HiggsWidth/test/draw.cxx
+    r99t higgsCombineTest.MultiDimFit.2j.root  HiggsWidth/test/draw.cxx
+    
+    r99t higgsCombineTest.MultiDimFit.0j.fixmu.root  HiggsWidth/test/draw.cxx
+    r99t higgsCombineTest.MultiDimFit.1j.fixmu.root  HiggsWidth/test/draw.cxx
+    r99t higgsCombineTest.MultiDimFit.2j.fixmu.root  HiggsWidth/test/draw.cxx
+    
+    
+    
 
 Comparison and combination:
 
@@ -134,6 +144,11 @@ Comparison and combination:
            higgsCombineTest.MultiDimFit.012j.fixmu.root \
            LimitCombine/HiggsWidth/test/drawCombined.cxx
     
+    r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
+           higgsCombineTest.MultiDimFit.1j.fixmu.root \
+           higgsCombineTest.MultiDimFit.2j.fixmu.root \
+           higgsCombineTest.MultiDimFit.0j.fixmu.root \
+           HiggsWidth/test/drawCombined.cxx
     
     
     
