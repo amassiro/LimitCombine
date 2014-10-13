@@ -1,6 +1,11 @@
 Example
 ====
 
+where:
+
+    /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
+
+
 Prepare and run:
 
     cp LimitCombine/HiggsWidth/python/HiggsWidth.py   HiggsAnalysis/CombinedLimit/python/
