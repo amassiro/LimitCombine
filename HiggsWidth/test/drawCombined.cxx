@@ -3,6 +3,9 @@
 
  #include "tools.h"
  
+ 
+ TCanvas *cc = new TCanvas("cc","",180,52,550,550);
+
  limit_0   = (TTree*) _file0->Get("limit");
  limit_1   = (TTree*) _file1->Get("limit");
  limit_2   = (TTree*) _file2->Get("limit");
@@ -47,16 +50,49 @@
  
  
  //----  draw
+ cc->SetTicks();
+ cc->SetFillColor(0);
+ cc->SetBorderMode(0);
+ cc->SetBorderSize(2);
+ cc->SetTickx(1);
+ cc->SetTicky(1);
+ cc->SetRightMargin(0.05);
+ cc->SetBottomMargin(0.12);
+ cc->SetFrameBorderMode(0);
+ TLatex * tex = new TLatex(0.94,0.92,"8 TeV");
+ tex->SetNDC();
+ tex->SetTextAlign(31);
+ tex->SetTextFont(42);
+ tex->SetTextSize(0.04);
+ tex->SetLineWidth(2);
+ TLatex * tex2 = new TLatex(0.14,0.92,"CMS");
+ tex2->SetNDC();
+ tex2->SetTextFont(61);
+ tex2->SetTextSize(0.04);
+ tex2->SetLineWidth(2);
+ TLatex * tex3 = new TLatex(0.236,0.92,"L = 19.4 fb^{-1}  Preliminary");
+ tex3->SetNDC();
+ tex3->SetTextFont(52);
+ tex3->SetTextSize(0.035);
+ tex3->SetLineWidth(2);
+
+ 
+ 
  
  graphScan_0->Draw("al");
  graphScan_0->GetXaxis()->SetTitle("r = #Gamma/#Gamma_{SM}");
  graphScan_0->GetYaxis()->SetTitle("- 2#Delta logL");
- graphScan_0->GetYaxis()->SetRangeUser(0,8);
+ graphScan_0->GetYaxis()->SetRangeUser(0,10);
+ graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
  
  graphScan_1  ->Draw("l");
  graphScan_2  ->Draw("l");
  graphScan_012->Draw("l");
  
+ tex->Draw("same");
+ tex2->Draw("same");
+ tex3->Draw("same");
+
  //---- legend
  
  leg = new TLegend(0.1,0.7,0.48,0.9);

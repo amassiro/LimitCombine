@@ -63,17 +63,17 @@ RVRFfixed
     text2workspace.py -m 125.6 hwidth_012jet.txt                              -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_012j_cv_cf_1.root  
 
     
-    combine -M MultiDimFit model_hwwlvlv_0j_cv_cf_1.root  --algo=grid --points 200  -m 125.6   -t -1 --expectSignal=1 --saveToys   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,50     --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF
-    mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.fixmu.root
+    combine -M MultiDimFit model_hwwlvlv_0j_cv_cf_1.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60     --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF     --verbose -1
+    mv higgsCombineTest.MultiDimFit.mH125.6.root      higgsCombineTest.MultiDimFit.0j.fixmu.root
     
-    combine -M MultiDimFit model_hwwlvlv_1j_cv_cf_1.root  --algo=grid --points 200  -m 125.6   -t -1 --expectSignal=1 --saveToys   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,50     --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF
-    mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.1j.fixmu.root
+    combine -M MultiDimFit model_hwwlvlv_1j_cv_cf_1.root  --algo=grid --points 10  -m 125.6   -t -1 --expectSignal=1   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60     --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF     --verbose -1
+    mv higgsCombineTest.MultiDimFit.mH125.6.root      higgsCombineTest.MultiDimFit.1j.fixmu.root
 
-    combine -M MultiDimFit model_hwwlvlv_2j_cv_cf_1.root  --algo=grid --points 200  -m 125.6   -t -1 --expectSignal=1 --saveToys   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,50     --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF
-    mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.2j.fixmu.root
+    combine -M MultiDimFit model_hwwlvlv_2j_cv_cf_1.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60     --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF     --verbose -1
+    mv higgsCombineTest.MultiDimFit.mH125.6.root      higgsCombineTest.MultiDimFit.2j.fixmu.root
 
-    combine -M MultiDimFit model_hwwlvlv_012j_cv_cf_1.root --algo=grid --points 200  -m 125.6   -t -1 --expectSignal=1 --saveToys   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,50    --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF
-    mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.012j.fixmu.root
+    combine -M MultiDimFit model_hwwlvlv_012j_cv_cf_1.root --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1   --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60    --setPhysicsModelParameters RV=1,RF=1,CMS_widthH_kbkg=1   --freezeNuisances RV,RF     --verbose -1
+    mv higgsCombineTest.MultiDimFit.mH125.6.root      higgsCombineTest.MultiDimFit.012j.fixmu.root
 
 
     
@@ -147,7 +147,7 @@ Comparison and combination:
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.root \
            higgsCombineTest.MultiDimFit.2j.fixmu.root \
-           higgsCombineTest.MultiDimFit.0j.fixmu.root \
+           higgsCombineTest.MultiDimFit.012j.fixmu.root \
            HiggsWidth/test/drawCombined.cxx
     
     
