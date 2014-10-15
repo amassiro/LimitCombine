@@ -8,7 +8,7 @@
 
  limit_0   = (TTree*) _file0->Get("limit");
  limit_1   = (TTree*) _file1->Get("limit");
- limit_012 = (TTree*) _file3->Get("limit");
+ limit_012 = (TTree*) _file2->Get("limit");
  
  int n;
  
