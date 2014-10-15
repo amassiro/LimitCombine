@@ -143,12 +143,14 @@ Comparison and combination:
            higgsCombineTest.MultiDimFit.2j.fixmu.root \
            higgsCombineTest.MultiDimFit.012j.fixmu.root \
            LimitCombine/HiggsWidth/test/drawCombined.cxx
-    
+
+
+    cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.root \
            higgsCombineTest.MultiDimFit.2j.fixmu.root \
            higgsCombineTest.MultiDimFit.012j.fixmu.root \
            HiggsWidth/test/drawCombined.cxx
-    
+
     
     
