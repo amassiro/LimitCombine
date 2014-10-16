@@ -104,8 +104,11 @@ scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/Hwidth/?jetD
     
     
     
-    
+#
 # simple mth:mll
+#
+
+# RVRFfixed
 
 
    text2workspace.py -m 125.6 datacards-0j-Simple/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_0j_cv_cf_1_simple.root    
@@ -127,7 +130,7 @@ scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/Hwidth/?jetD
     mv higgsCombineTest.MultiDimFit.mH125.6.root      higgsCombineTest.MultiDimFit.01j.fixmu.simple.root
 
     
-all floating
+# all floating
     
 
     text2workspace.py -m 125.6 datacards-0j-Simple/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j_simple.root
