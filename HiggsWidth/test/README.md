@@ -6,6 +6,11 @@ where:
     cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
 
 
+Preparation:
+
+    Higgs combine installation from
+    https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideHiggsAnalysisCombinedLimit#GIT_recipe_the_only_supported_re
+
 Prepare and run:
 
     cp LimitCombine/HiggsWidth/python/HiggsWidth.py   HiggsAnalysis/CombinedLimit/python/
