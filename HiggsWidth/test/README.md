@@ -143,6 +143,8 @@ all floating
 Automatic prepare
 ====
 
+    cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
+
     sh HiggsWidth/test/prepare.sh
 
 
