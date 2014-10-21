@@ -212,7 +212,11 @@ Comparison and combination:
            higgsCombineTest.MultiDimFit.01j.root \
            HiggsWidth/test/drawCombined01.cxx
 
-
+ 
+    r99t   higgsCombineTest.MultiDimFit.0j.simple.root \
+           higgsCombineTest.MultiDimFit.1j.simple.root \
+           higgsCombineTest.MultiDimFit.01j.simple.root \
+           HiggsWidth/test/drawCombined01.cxx
 
 
 
