@@ -201,7 +201,6 @@ Comparison and combination:
            higgsCombineTest.MultiDimFit.012j.root \
            HiggsWidth/test/drawCombined.cxx
 
-
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.root \
            higgsCombineTest.MultiDimFit.01j.fixmu.root \
@@ -212,13 +211,14 @@ Comparison and combination:
            higgsCombineTest.MultiDimFit.01j.root \
            HiggsWidth/test/drawCombined01.cxx
 
- 
-    r99t   higgsCombineTest.MultiDimFit.0j.simple.root \
-           higgsCombineTest.MultiDimFit.1j.simple.root \
-           higgsCombineTest.MultiDimFit.01j.simple.root \
-           HiggsWidth/test/drawCombined01.cxx
 
 
+
+   r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
+           higgsCombineTest.MultiDimFit.1j.fixmu.simple.root \
+           higgsCombineTest.MultiDimFit.2j.fixmu.root \
+           higgsCombineTest.MultiDimFit.012j.fixmu.simple.root \
+           HiggsWidth/test/drawCombined.cxx
 
     r99t   higgsCombineTest.MultiDimFit.0j.simple.root \
            higgsCombineTest.MultiDimFit.1j.simple.root \
@@ -226,17 +226,15 @@ Comparison and combination:
            higgsCombineTest.MultiDimFit.012j.simple.root \
            HiggsWidth/test/drawCombined.cxx
 
-
-
-
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.simple.root \
-           higgsCombineTest.MultiDimFit.2j.fixmu.root \
-           higgsCombineTest.MultiDimFit.012j.fixmu.simple.root \
-           HiggsWidth/test/drawCombined.cxx
+           higgsCombineTest.MultiDimFit.01j.fixmu.simple.root \
+           HiggsWidth/test/drawCombined01.cxx
 
-
-
+    r99t   higgsCombineTest.MultiDimFit.0j.simple.root \
+           higgsCombineTest.MultiDimFit.1j.simple.root \
+           higgsCombineTest.MultiDimFit.01j.simple.root \
+           HiggsWidth/test/drawCombined01.cxx
 
 
 
