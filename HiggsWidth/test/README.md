@@ -214,7 +214,7 @@ Comparison and combination:
 
 
 
-   r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
+    r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.simple.root \
            higgsCombineTest.MultiDimFit.2j.fixmu.root \
            higgsCombineTest.MultiDimFit.012j.fixmu.simple.root \
