@@ -180,6 +180,18 @@ Comparison and combination:
            LimitCombine/HiggsWidth/test/drawCombined.cxx
 
 
+compare combined 80+1)j and 0j + 1j
+
+    r99t   higgsCombineTest.MultiDimFit.0j.root \
+           higgsCombineTest.MultiDimFit.1j.root \
+           higgsCombineTest.MultiDimFit.01j.root \
+           higgsCombineTest.MultiDimFit.01j.together.root \
+           HiggsWidth/test/drawCombined_combinationComparison.cxx
+
+
+
+
+
 
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.root \
@@ -239,7 +251,21 @@ Comparison and combination:
 
 
 
+Compare variable mu
 
+    r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
+           higgsCombineTest.MultiDimFit.1j.fixmu.root \
+           higgsCombineTest.MultiDimFit.2j.fixmu.root \
+           higgsCombineTest.MultiDimFit.012j.fixmu.root \
+           higgsCombineTest.MultiDimFit.0j.fixmu.cms072.root \
+           higgsCombineTest.MultiDimFit.1j.fixmu.cms072.root \
+           higgsCombineTest.MultiDimFit.2j.fixmu.cms072.root \
+           higgsCombineTest.MultiDimFit.012j.fixmu.cms072.root \
+           higgsCombineTest.MultiDimFit.0j.fixmu.cms150.root \
+           higgsCombineTest.MultiDimFit.1j.fixmu.cms150.root \
+           higgsCombineTest.MultiDimFit.2j.fixmu.cms150.root \
+           higgsCombineTest.MultiDimFit.012j.fixmu.cms150.root \
+           HiggsWidth/test/drawCombinedVariableMu.cxx
 
 
 
