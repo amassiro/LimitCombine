@@ -73,7 +73,8 @@
  graphScan_0->GetXaxis()->SetTitle("r = #Gamma/#Gamma_{SM}");
  graphScan_0->GetYaxis()->SetTitle("- 2#Delta logL");
  graphScan_0->GetYaxis()->SetRangeUser(0,10);
- graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
+ graphScan_0->GetXaxis()->SetRangeUser(0,45);
+//  graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
  
  graphScan_1  ->Draw("l");
  graphScan_012->Draw("l");
@@ -127,6 +128,7 @@
  
  gPad->SetGrid();
  
+ cc->SaveAs("cc01.png");
  
 }
 
