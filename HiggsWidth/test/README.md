@@ -180,7 +180,7 @@ Comparison and combination:
            LimitCombine/HiggsWidth/test/drawCombined.cxx
 
 
-compare combined 80+1)j and 0j + 1j
+compare combined (0+1)j and 0j + 1j
 
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.1j.root \
@@ -207,23 +207,32 @@ compare combined 80+1)j and 0j + 1j
            higgsCombineTest.MultiDimFit.012j.fixmu.root \
            HiggsWidth/test/drawCombined.cxx
 
+    mv cc.png Limit_muFix1_012jet.png
+
+
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.1j.root \
            higgsCombineTest.MultiDimFit.2j.root \
            higgsCombineTest.MultiDimFit.012j.root \
            HiggsWidth/test/drawCombined.cxx
 
+    mv cc.png Limit_muFloat_012jet.png
+
+
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.root \
            higgsCombineTest.MultiDimFit.01j.fixmu.root \
            HiggsWidth/test/drawCombined01.cxx
+
+    mv cc01.png Limit_muFix1_01jet.png
+
 
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.1j.root \
            higgsCombineTest.MultiDimFit.01j.root \
            HiggsWidth/test/drawCombined01.cxx
 
-
+    mv cc01.png Limit_muFloat_01jet.png
 
 
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
@@ -237,6 +246,9 @@ compare combined 80+1)j and 0j + 1j
            higgsCombineTest.MultiDimFit.2j.root \
            higgsCombineTest.MultiDimFit.012j.simple.root \
            HiggsWidth/test/drawCombined.cxx
+
+    mv cc.png Limit_Alternative_muFloat_012jet.png
+
 
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.simple.root \
