@@ -279,5 +279,9 @@ Compare variable mu
            higgsCombineTest.MultiDimFit.012j.fixmu.cms150.root \
            HiggsWidth/test/drawCombinedVariableMu.cxx
 
+    mv cc.png Limit_muFixDifferent_012jet.png
+
+
+
 
 
