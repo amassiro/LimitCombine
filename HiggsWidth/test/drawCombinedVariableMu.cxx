@@ -1,0 +1,270 @@
+
+{
+
+#include "tools.h"
+ 
+ 
+ TCanvas *cc = new TCanvas("cc","",180,52,550,550);
+
+ limit_0   = (TTree*) _file0->Get("limit");
+ limit_1   = (TTree*) _file1->Get("limit");
+ limit_2   = (TTree*) _file2->Get("limit");
+ limit_012 = (TTree*) _file3->Get("limit");
+
+ mu_072_limit_0   = (TTree*) _file4->Get("limit");
+ mu_072_limit_1   = (TTree*) _file5->Get("limit");
+ mu_072_limit_2   = (TTree*) _file6->Get("limit");
+ mu_072_limit_012 = (TTree*) _file7->Get("limit");
+
+ mu_150_limit_0   = (TTree*) _file8->Get("limit");
+ mu_150_limit_1   = (TTree*) _file9->Get("limit");
+ mu_150_limit_2   = (TTree*) _file10->Get("limit");
+ mu_150_limit_012 = (TTree*) _file11->Get("limit");
+
+ int n;
+
+ //---- mu = 1
+ n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *graphScan_0 = new TGraph(n,limit_0->GetV2(),limit_0->GetV1());
+ graphScan_0->SetTitle("");
+ graphScan_0->SetMarkerStyle(21);
+ graphScan_0->SetLineWidth(2);
+ graphScan_0->SetMarkerColor(kBlue);
+ graphScan_0->SetLineColor(kBlue);
+
+
+ n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
+ graphScan_1->SetTitle("");
+ graphScan_1->SetMarkerStyle(21);
+ graphScan_1->SetLineWidth(2);
+ graphScan_1->SetMarkerColor(kBlack);
+ graphScan_1->SetLineColor(kBlack);
+
+
+ n =  limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *graphScan_2 = new TGraph(n,limit_2->GetV2(),limit_2->GetV1());
+ graphScan_2->SetTitle("");
+ graphScan_2->SetMarkerStyle(21);
+ graphScan_2->SetLineWidth(2);
+ graphScan_2->SetMarkerColor(kGreen);
+ graphScan_2->SetLineColor(kGreen);
+
+
+ n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *graphScan_012 = new TGraph(n,limit_012->GetV2(),limit_012->GetV1());
+ graphScan_012->SetTitle("");
+ graphScan_012->SetMarkerStyle(21);
+ graphScan_012->SetLineWidth(2);
+ graphScan_012->SetMarkerColor(kRed);
+ graphScan_012->SetLineColor(kRed);
+
+
+  //---- mu = 0.72
+ n =  mu_072_limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_072_graphScan_0 = new TGraph(n,mu_072_limit_0->GetV2(),mu_072_limit_0->GetV1());
+ mu_072_graphScan_0->SetTitle("");
+ mu_072_graphScan_0->SetMarkerStyle(21);
+ mu_072_graphScan_0->SetLineWidth(2);
+ mu_072_graphScan_0->SetLineStyle(5);
+ mu_072_graphScan_0->SetMarkerColor(kBlue);
+ mu_072_graphScan_0->SetLineColor(kBlue);
+
+
+ n =  mu_072_limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_072_graphScan_1 = new TGraph(n,mu_072_limit_1->GetV2(),mu_072_limit_1->GetV1());
+ mu_072_graphScan_1->SetTitle("");
+ mu_072_graphScan_1->SetMarkerStyle(21);
+ mu_072_graphScan_1->SetLineWidth(2);
+ mu_072_graphScan_1->SetLineStyle(5);
+ mu_072_graphScan_1->SetMarkerColor(kBlack);
+ mu_072_graphScan_1->SetLineColor(kBlack);
+
+
+ n =  mu_072_limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_072_graphScan_2 = new TGraph(n,mu_072_limit_2->GetV2(),mu_072_limit_2->GetV1());
+ mu_072_graphScan_2->SetTitle("");
+ mu_072_graphScan_2->SetMarkerStyle(21);
+ mu_072_graphScan_2->SetLineWidth(2);
+ mu_072_graphScan_2->SetLineStyle(5);
+ mu_072_graphScan_2->SetMarkerColor(kGreen);
+ mu_072_graphScan_2->SetLineColor(kGreen);
+
+
+ n =  mu_072_limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_072_graphScan_012 = new TGraph(n,mu_072_limit_012->GetV2(),mu_072_limit_012->GetV1());
+ mu_072_graphScan_012->SetTitle("");
+ mu_072_graphScan_012->SetMarkerStyle(21);
+ mu_072_graphScan_012->SetLineWidth(2);
+ mu_072_graphScan_012->SetLineStyle(5);
+ mu_072_graphScan_012->SetMarkerColor(kRed);
+ mu_072_graphScan_012->SetLineColor(kRed);
+
+
+   //---- mu = 1.50
+ n =  mu_150_limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_150_graphScan_0 = new TGraph(n,mu_150_limit_0->GetV2(),mu_150_limit_0->GetV1());
+ mu_150_graphScan_0->SetTitle("");
+ mu_150_graphScan_0->SetMarkerStyle(21);
+ mu_150_graphScan_0->SetLineWidth(2);
+ mu_150_graphScan_0->SetLineStyle(2);
+ mu_150_graphScan_0->SetMarkerColor(kBlue);
+ mu_150_graphScan_0->SetLineColor(kBlue);
+
+
+ n =  mu_150_limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_150_graphScan_1 = new TGraph(n,mu_150_limit_1->GetV2(),mu_150_limit_1->GetV1());
+ mu_150_graphScan_1->SetTitle("");
+ mu_150_graphScan_1->SetMarkerStyle(21);
+ mu_150_graphScan_1->SetLineWidth(2);
+ mu_150_graphScan_1->SetLineStyle(2);
+ mu_150_graphScan_1->SetMarkerColor(kBlack);
+ mu_150_graphScan_1->SetLineColor(kBlack);
+
+
+ n =  mu_150_limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_150_graphScan_2 = new TGraph(n,mu_150_limit_2->GetV2(),mu_150_limit_2->GetV1());
+ mu_150_graphScan_2->SetTitle("");
+ mu_150_graphScan_2->SetMarkerStyle(21);
+ mu_150_graphScan_2->SetLineWidth(2);
+ mu_150_graphScan_2->SetLineStyle(2);
+ mu_150_graphScan_2->SetMarkerColor(kGreen);
+ mu_150_graphScan_2->SetLineColor(kGreen);
+
+
+ n =  mu_150_limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ TGraph *mu_150_graphScan_012 = new TGraph(n,mu_150_limit_012->GetV2(),mu_150_limit_012->GetV1());
+ mu_150_graphScan_012->SetTitle("");
+ mu_150_graphScan_012->SetMarkerStyle(21);
+ mu_150_graphScan_012->SetLineWidth(2);
+ mu_150_graphScan_012->SetLineStyle(2);
+ mu_150_graphScan_012->SetMarkerColor(kRed);
+ mu_150_graphScan_012->SetLineColor(kRed);
+
+
+
+ //----  draw
+ cc->SetTicks();
+ cc->SetFillColor(0);
+ cc->SetBorderMode(0);
+ cc->SetBorderSize(2);
+ cc->SetTickx(1);
+ cc->SetTicky(1);
+ cc->SetRightMargin(0.05);
+ cc->SetBottomMargin(0.12);
+ cc->SetFrameBorderMode(0);
+ TLatex * tex = new TLatex(0.94,0.92,"8 TeV");
+ tex->SetNDC();
+ tex->SetTextAlign(31);
+ tex->SetTextFont(42);
+ tex->SetTextSize(0.04);
+ tex->SetLineWidth(2);
+ TLatex * tex2 = new TLatex(0.14,0.92,"CMS");
+ tex2->SetNDC();
+ tex2->SetTextFont(61);
+ tex2->SetTextSize(0.04);
+ tex2->SetLineWidth(2);
+ TLatex * tex3 = new TLatex(0.236,0.92,"L = 19.4 fb^{-1}  Preliminary");
+ tex3->SetNDC();
+ tex3->SetTextFont(52);
+ tex3->SetTextSize(0.035);
+ tex3->SetLineWidth(2);
+
+ 
+ 
+ 
+ graphScan_0->Draw("al");
+ graphScan_0->GetXaxis()->SetTitle("r = #Gamma/#Gamma_{SM}");
+ graphScan_0->GetYaxis()->SetTitle("- 2#Delta logL");
+ graphScan_0->GetYaxis()->SetRangeUser(0,10);
+//  graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
+ graphScan_0->GetXaxis()->SetRangeUser(0,45);
+
+ graphScan_1  ->Draw("l");
+ graphScan_2  ->Draw("l");
+ graphScan_012->Draw("l");
+
+ mu_072_graphScan_0  ->Draw("l");
+ mu_072_graphScan_1  ->Draw("l");
+ mu_072_graphScan_2  ->Draw("l");
+ mu_072_graphScan_012->Draw("l");
+
+ mu_150_graphScan_0  ->Draw("l");
+ mu_150_graphScan_1  ->Draw("l");
+ mu_150_graphScan_2  ->Draw("l");
+ mu_150_graphScan_012->Draw("l");
+
+ tex->Draw("same");
+ tex2->Draw("same");
+ tex3->Draw("same");
+
+ //---- legend
+
+ leg = new TLegend(0.10,0.7,0.30,0.9);
+ leg->SetHeader("#mu = 1");
+ leg->AddEntry(graphScan_0,"0 jet","l");
+ leg->AddEntry(graphScan_1,"1 jet","l");
+ leg->AddEntry(graphScan_2,"2 jet","l");
+ leg->AddEntry(graphScan_012,"0 jet + 1 jet + 2 jet","l");
+
+ mu_072_leg = new TLegend(0.30,0.7,0.50,0.9);
+ mu_072_leg->SetHeader("#mu = 0.72");
+ mu_072_leg->AddEntry(mu_072_graphScan_0,"0 jet","l");
+ mu_072_leg->AddEntry(mu_072_graphScan_1,"1 jet","l");
+ mu_072_leg->AddEntry(mu_072_graphScan_2,"2 jet","l");
+ mu_072_leg->AddEntry(mu_072_graphScan_012,"0 jet + 1 jet + 2 jet","l");
+
+ mu_150_leg = new TLegend(0.50,0.7,0.70,0.9);
+ mu_150_leg->SetHeader("#mu = 1.50");
+ mu_150_leg->AddEntry(mu_150_graphScan_0,"0 jet","l");
+ mu_150_leg->AddEntry(mu_150_graphScan_1,"1 jet","l");
+ mu_150_leg->AddEntry(mu_150_graphScan_2,"2 jet","l");
+ mu_150_leg->AddEntry(mu_150_graphScan_012,"0 jet + 1 jet + 2 jet","l");
+
+ leg->SetFillColor(0);
+ leg->Draw();
+ mu_072_leg->SetFillColor(0);
+ mu_072_leg->Draw();
+ mu_150_leg->SetFillColor(0);
+ mu_150_leg->Draw();
+
+
+ //  2deltaLogL = 1.00
+ //  2deltaLogL = 3.84
+
+ //  std::cout << " max X = " << (limit_012->GetV2())[n-1] << std::endl;
+
+
+ TLine *line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n-1],1.0);
+ line1->SetLineWidth(2);
+ line1->SetLineStyle(2);
+ line1->Draw(); 
+ 
+ TLine *line2 = new TLine(0.0,3.84,(limit_012->GetV2())[n-1],3.84);
+ line2->SetLineWidth(2);
+ line2->SetLineStyle(2);
+ line2->Draw();
+ 
+ 
+ 
+ double value_x_1sigma = findCrossingOfScan1D(*graphScan_012, 1.00);
+ std::cout << " value_x_1sigma = " << value_x_1sigma << std::endl;
+ double value_x_2sigma = findCrossingOfScan1D(*graphScan_012, 3.84);
+ std::cout << " value_x_2sigma = " << value_x_2sigma << std::endl;
+ 
+ TLine *vline1 = new TLine(value_x_1sigma,0.0,value_x_1sigma,1.0);
+ vline1->SetLineWidth(2);
+ vline1->SetLineStyle(2);
+ vline1->Draw(); 
+ 
+ TLine *vline2 = new TLine(value_x_2sigma,0.0,value_x_2sigma,3.84);
+ vline2->SetLineWidth(2);
+ vline2->SetLineStyle(2);
+ vline2->Draw();
+ 
+ gPad->SetGrid();
+ 
+ 
+}
+
+
