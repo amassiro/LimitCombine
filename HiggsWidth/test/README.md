@@ -260,7 +260,7 @@ compare combined (0+1)j and 0j + 1j
            higgsCombineTest.MultiDimFit.01j.simple.root \
            HiggsWidth/test/drawCombined01.cxx
 
-
+    mv cc01.png Limit_Alternative_muFloat_01jet.png
 
 
 Compare variable mu
