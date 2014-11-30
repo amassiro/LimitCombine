@@ -167,6 +167,8 @@ Plot
     r99t higgsCombineTest.MultiDimFit.2j.fixmu.root  HiggsWidth/test/draw.cxx
 
 
+    r99t higgsCombineTest.MultiDimFit.01j.7TeV.together.root           HiggsWidth/test/draw.cxx
+    r99t higgsCombineTest.MultiDimFit.01j.7TeV.together.fixmu.root     HiggsWidth/test/draw.cxx
 
 
 Comparison and combination:
