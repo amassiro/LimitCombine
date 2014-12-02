@@ -285,5 +285,14 @@ Compare variable mu
 
 
 
+7 TeV
+
+    r99t   higgsCombineTest.MultiDimFit.0j.7TeV.root \
+           higgsCombineTest.MultiDimFit.1j.7TeV.root \
+           higgsCombineTest.MultiDimFit.2j.7TeV.root \
+           higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           HiggsWidth/test/drawCombined.cxx
+
+    mv cc.png Limit_muFloat_012jet_7TeV.png
 
 
