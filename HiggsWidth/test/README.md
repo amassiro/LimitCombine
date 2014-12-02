@@ -147,6 +147,7 @@ Automatic prepare
 
     sh HiggsWidth/test/prepare.sh
 
+    sh HiggsWidth/test/prepare_7TeV.sh
 
 
 Plot
