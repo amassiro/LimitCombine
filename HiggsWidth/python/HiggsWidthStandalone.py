@@ -33,6 +33,9 @@ class Higgswidth(PhysicsModel):
                 return "R"
             else:
                 return "RV"
+        elif process in ["qqH2j"]:
+            #return "RV"
+            return "RV2"
         else:
             return 1
             
@@ -72,6 +75,7 @@ class Higgswidth(PhysicsModel):
             
     def doParametersOfInterest(self):
         """Create POI and other parameters, and define the POI set."""
+        self.modelBuilder.doVar("RV2[1.,0.,8.]")
         if self.is2l2nu:
             self.modelBuilder.doVar("CMS_zz4l_GGsm[1.,0.,30.]")
             self.modelBuilder.doVar("CMS_widthH_kbkg[1.,0.,2.]")
@@ -103,6 +107,7 @@ class Higgswidth(PhysicsModel):
             self.modelBuilder.out.var("CMS_widthH_kbkg")
             self.modelBuilder.out.var("CMS_widthH_kbkg").setVal(1)
             self.modelBuilder.out.var("CMS_widthH_kbkg").setConstant(True) # AM # my constraint
+            #self.RVRFfixed = True
             if self.RVRFfixed:
                 self.modelBuilder.out.var("R").setRange(0.0,4.0)
                 self.modelBuilder.out.var("RV").setConstant(True)
@@ -111,6 +116,7 @@ class Higgswidth(PhysicsModel):
                 self.modelBuilder.out.var("RV").setRange(0.0,8.0)
                 self.modelBuilder.out.var("RF").setRange(0.0,4.0)
                 self.modelBuilder.out.var("R").setConstant(True)
+                #self.modelBuilder.out.var("RF").setConstant(True)
             if self.RandRVRFfixed:
                 self.modelBuilder.out.var("R").setConstant(True)
                 self.modelBuilder.out.var("RF").setConstant(True)
@@ -118,7 +124,8 @@ class Higgswidth(PhysicsModel):
                 
             #poi = "CMS_zz4l_GGsm,R"
             poi = "CMS_zz4l_GGsm"
-
+            #poi = "RV"
+            
         self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@3*@1-sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
         self.modelBuilder.factory_("expr::ggH_b_func(\"@2-sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
         self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
