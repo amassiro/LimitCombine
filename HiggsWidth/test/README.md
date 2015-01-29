@@ -313,6 +313,7 @@ Compare with and without cross-feed
            higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
            HiggsWidth/test/drawCombinedWithAndWithoutCrossFeed.cxx
 
+    r99t   HiggsWidth/test/drawCombinedWithAndWithoutCrossFeed.cxx
            
            
            

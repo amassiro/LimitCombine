@@ -2,6 +2,9 @@
 
  #include "tools.h"
  
+ TFile* _file0 = new TFile("higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.standard.root");
+ TFile* _file1 = new TFile("higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
+ 
  
  TCanvas *cc = new TCanvas("cc","",180,52,550,550);
 

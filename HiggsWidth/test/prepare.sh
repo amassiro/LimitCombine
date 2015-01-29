@@ -107,9 +107,6 @@ echo ">>>> all floating"
     
     
     
-    
-    
-    
 echo " --- "
 echo ">>>>  simple mth:mll "
 echo " --- "
