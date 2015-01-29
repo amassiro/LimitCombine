@@ -304,3 +304,26 @@ Compare variable mu
            higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
            HiggsWidth/test/drawCombined7and8TeV.cxx
 
+
+           
+           
+Compare with and without cross-feed
+
+    r99t   higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.standard.root \
+           higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombinedWithAndWithoutCrossFeed.cxx
+
+           
+           
+           
+           
+           
+125 GeV to 125.6 GeV scaling
+    
+    weights['ggH'] = weights['ggH'] + '*1.035'
+    weights['qqH'] = weights['qqH'] + '*1.041'
+
+    
+    
+    
+    
