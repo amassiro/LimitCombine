@@ -24,8 +24,8 @@
  graphScan_1->SetTitle("");
  graphScan_1->SetMarkerStyle(21);
  graphScan_1->SetLineWidth(2);
- graphScan_1->SetMarkerColor(kBlack);
- graphScan_1->SetLineColor(kBlack);
+ graphScan_1->SetMarkerColor(kRed);
+ graphScan_1->SetLineColor(kRed);
  
  
  //----  draw
