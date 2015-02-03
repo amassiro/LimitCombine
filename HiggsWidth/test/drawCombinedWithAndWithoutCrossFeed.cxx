@@ -8,7 +8,11 @@
  //---- all
  TFile* _file0 = new TFile("Standard/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
 //  TFile* _file1 = new TFile("NoCrossFeed/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
- TFile* _file1 = new TFile("NoCrossFeed_RemoveOffShellFromOnShellRegion/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
+//  TFile* _file1 = new TFile("NoCrossFeed_RemoveOffShellFromOnShellRegion/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
+//  TFile* _file1 = new TFile("NoCrossFeed_RemoveOnShellFromOffShellRegion/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
+ TFile* _file1 = new TFile("NoCrossFeed_RemoveOnShellFromOffShellRegionAndOffShellInOnShellOnlyGGH/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root");
+ 
+ 
  
 //  TFile* _file0 = new TFile("Standard/higgsCombineTest.MultiDimFit.0j.root");
 //  TFile* _file1 = new TFile("NoCrossFeed/higgsCombineTest.MultiDimFit.0j.root");
