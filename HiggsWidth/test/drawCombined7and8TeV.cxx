@@ -73,8 +73,9 @@
  graphScan_0->GetXaxis()->SetTitle("r = #Gamma/#Gamma_{SM}");
  graphScan_0->GetYaxis()->SetTitle("- 2#Delta logL");
  graphScan_0->GetYaxis()->SetRangeUser(0,10);
- graphScan_0->GetXaxis()->SetRangeUser(0,45);
-//  graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
+ graphScan_0->GetXaxis()->SetRangeUser(0,40);
+//  graphScan_0->GetXaxis()->SetRangeUser(0,45);
+ //  graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
  
  graphScan_1  ->Draw("l");
  graphScan_012->Draw("l");
@@ -85,7 +86,7 @@
 
  //---- legend
  
- leg = new TLegend(0.1,0.7,0.48,0.9);
+ leg = new TLegend(0.50,0.60,0.90,0.80);
  leg->AddEntry(graphScan_0,"7 TeV jet","l");
  leg->AddEntry(graphScan_1,"8 TeV jet","l");
  leg->AddEntry(graphScan_012,"7 + 8 TeV","l");
