@@ -305,7 +305,11 @@ Compare variable mu
            HiggsWidth/test/drawCombined7and8TeV.cxx
 
 
-           
+    r99t   Standard/higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           Standard/higgsCombineTest.MultiDimFit.012j.root \
+           Standard/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV.cxx
+          
            
 Compare with and without cross-feed
 
