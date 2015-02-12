@@ -145,6 +145,8 @@ Automatic prepare
 
     cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
 
+    cmsenv 
+    
     sh HiggsWidth/test/prepare.sh
 
     sh HiggsWidth/test/prepare_7TeV.sh
