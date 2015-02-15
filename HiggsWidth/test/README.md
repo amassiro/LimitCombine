@@ -312,7 +312,17 @@ Compare variable mu
            Standard/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
            HiggsWidth/test/drawCombined7and8TeV.cxx
           
-           
+
+    r99t   sqrt/higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           sqrt/higgsCombineTest.MultiDimFit.012j.root \
+           sqrt/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV.cxx
+
+    r99t   oneoverx/higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           oneoverx/higgsCombineTest.MultiDimFit.012j.root \
+           oneoverx/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV.cxx
+
 Compare with and without cross-feed
 
     r99t   higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.standard.root \

@@ -86,7 +86,8 @@
 
  //---- legend
  
- leg = new TLegend(0.50,0.60,0.90,0.80);
+//  leg = new TLegend(0.50,0.60,0.90,0.80);
+ leg = new TLegend(0.10,0.70,0.50,0.90);
  leg->AddEntry(graphScan_0,"7 TeV jet","l");
  leg->AddEntry(graphScan_1,"8 TeV jet","l");
  leg->AddEntry(graphScan_012,"7 + 8 TeV","l");
