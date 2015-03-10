@@ -223,6 +223,14 @@ compare combined (0+1)j and 0j + 1j
 
     mv cc.png Limit_muFloat_012jet.png
 
+    
+    r99t   beforePhantomWeight/higgsCombineTest.MultiDimFit.0j.root \
+           beforePhantomWeight/higgsCombineTest.MultiDimFit.1j.root \
+           beforePhantomWeight/higgsCombineTest.MultiDimFit.2j.root \
+           beforePhantomWeight/higgsCombineTest.MultiDimFit.012j.root \
+           HiggsWidth/test/drawCombined.cxx
+
+
 
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.root \
