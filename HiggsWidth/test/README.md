@@ -351,5 +351,20 @@ Compare with and without cross-feed
 
     
     
+Commit datacards to repository
+====
+
+where:
+
+    /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-032/125
+    
+copy:
+
+    cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-032/125
+    cp /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/datacards-?j/hww-19.36fb.mH125.of_?j_shape.txt  ./
+    cp /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/datacards-?j-7TeV/hww-4.94fb.mH125.of_?j_shape.txt  ./
+    cp /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/datacards-?j/shapes/hww*.root  ./shapes/
+    cp /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/datacards-?j-7TeV/shapes/hww*.root  ./shapes/
+
     
     
