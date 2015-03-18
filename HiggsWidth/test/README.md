@@ -314,6 +314,7 @@ Compare variable mu
            higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
            HiggsWidth/test/drawCombined7and8TeV.cxx
 
+    mv cc7and8TeV.png Limit_muFloat_012jet_7TeV_8TeV.png
 
     r99t   Standard/higgsCombineTest.MultiDimFit.012j.7TeV.root \
            Standard/higgsCombineTest.MultiDimFit.012j.root \
