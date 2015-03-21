@@ -112,6 +112,11 @@ echo ">>>> WW is2l2nu and mH scaled MHScaleWW in combination with HZZ"
 #                       hzz4l=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/hzz4l_all.txt \
 #                       hzz2l2v=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat \
 #                       >   hwidth_hww_hzz.txt
+# 
+# 
+# /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine
+# 
+# 
 
     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/hzz4l_all.txt          -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz4l.root
     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz2l2v.root
