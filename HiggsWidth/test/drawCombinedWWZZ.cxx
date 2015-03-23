@@ -83,7 +83,7 @@
  graphScan_0->GetXaxis()->SetTitle("r = #Gamma/#Gamma_{SM}");
  graphScan_0->GetYaxis()->SetTitle("- 2#Delta logL");
  graphScan_0->GetYaxis()->SetRangeUser(0,10);
- graphScan_0->GetXaxis()->SetRangeUser(0,40);
+ graphScan_0->GetXaxis()->SetRangeUser(0,30);
  //  graphScan_0->GetXaxis()->SetRangeUser(0,45);
  //  graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
  
@@ -142,6 +142,24 @@
  gPad->SetGrid();
  
  cc->SaveAs("ccWWandZZ.png");
+ 
+
+ //---- draw Width 
+ TText t;
+ t.SetTextSize(0.035);
+ t.SetTextAlign(22);
+ t.SetTextColor(kRed);
+ for (Int_t i=1;i<30;i++) {
+//   if (!(i%5)) t.DrawText(i,0.3,Form("%1.f",i*4.15));
+  if (!(i%5)) t.DrawText(i,0.3,Form("%d",TMath::Nint(i*4.15)));
+ }
+ 
+ TLatex tl;
+ tl.SetTextSize(0.03);
+ tl.SetTextColor(kRed);
+ tl.DrawLatex(26.5,0.3-0.1,"#Gamma [MeV]");
+ 
+//  Gamma = 4.15 MeV
  
 }
 
