@@ -350,7 +350,19 @@ Compare with and without cross-feed
     weights['ggH'] = weights['ggH'] + '*1.035'
     weights['qqH'] = weights['qqH'] + '*1.041'
 
+
     
+WW and ZZ
+=====
+
+    r99t   higgsCombineTest.MultiDimFit.hzz4l.root \
+           higgsCombineTest.MultiDimFit.hzz4l.root \
+           higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombinedWWZZ.cxx
+
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \           
+
     
 Commit datacards to repository
 ====
