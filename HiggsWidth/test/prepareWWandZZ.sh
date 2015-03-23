@@ -119,7 +119,9 @@ echo ">>>> WW is2l2nu and mH scaled MHScaleWW in combination with HZZ"
 # 
 
     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/hzz4l_all.txt          -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz4l.root
-    text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz2l2v.root
+    text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth  --PO=is2l2nu --PO=MHScaleWW  -o    model_hzz2l2v.root
+    #     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.testB:higgswidth                               --PO=is2l2nu --PO=MHScaleWW  -o    model_hzz2l2v.root
+    #     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_incl.dat       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz2l2v.root
     text2workspace.py -m 125.6 hwidth_012jet_7TeV_8TeV.txt                                                                       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth  --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv.root
     text2workspace.py -m 125.6 hwidth_hww_hzz.txt                                                                                -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hww_hzz.root
 
@@ -136,3 +138,10 @@ echo ">>>> WW is2l2nu and mH scaled MHScaleWW in combination with HZZ"
     combine -M MultiDimFit model_hww_hzz.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1 --saveToys  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30          --verbose -1
     mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.hww.hzz.root
 
+    
+    
+    
+    
+    
+    
+    

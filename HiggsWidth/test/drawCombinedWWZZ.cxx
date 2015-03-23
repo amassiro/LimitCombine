@@ -96,7 +96,6 @@
  
  //---- legend
  
- //  leg = new TLegend(0.50,0.60,0.90,0.80);
  leg = new TLegend(0.10,0.70,0.50,0.90);
  leg->AddEntry(graphScan_0,"ZZ4l","l");
  leg->AddEntry(graphScan_1,"ZZ2l2v","l");

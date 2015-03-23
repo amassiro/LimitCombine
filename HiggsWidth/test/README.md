@@ -356,13 +356,38 @@ WW and ZZ
 =====
 
     r99t   higgsCombineTest.MultiDimFit.hzz4l.root \
-           higgsCombineTest.MultiDimFit.hzz4l.root \
+           higgsCombineTest.MultiDimFit.hzz2l2v.root \
            higgsCombineTest.MultiDimFit.hwwlvlv.root \
            higgsCombineTest.MultiDimFit.hwwlvlv.root \
            HiggsWidth/test/drawCombinedWWZZ.cxx
 
+    r99t   higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           HiggsWidth/test/drawCombinedWWZZ.cxx
 
-    
+    r99t   higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           higgsCombineTest.MultiDimFit.hzz2l2v.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           HiggsWidth/test/drawCombinedWWZZ.cxx           
+
+    r99t   higgsCombineTest.MultiDimFit.hzz2l2v.root \
+           higgsCombineTest.MultiDimFit.hzz2l2v.root \
+           higgsCombineTest.MultiDimFit.hzz2l2v.root \
+           higgsCombineTest.MultiDimFit.hzz2l2v.root \
+           HiggsWidth/test/drawCombinedWWZZ.cxx           
+
+    r99t   higgsCombineTest.MultiDimFit.hzz4l.root \
+           higgsCombineTest.MultiDimFit.hzz4l.root \
+           higgsCombineTest.MultiDimFit.hzz4l.root \
+           higgsCombineTest.MultiDimFit.hzz4l.root \
+           HiggsWidth/test/drawCombinedWWZZ.cxx           
+
+           
+           
+           
 Commit datacards to repository
 ====
 

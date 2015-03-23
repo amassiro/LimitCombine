@@ -108,7 +108,9 @@ class Higgswidth(PhysicsModel):
           self.modelBuilder.out.var("xsr_ggH").setVal(1.035)
         else:
           self.modelBuilder.out.var("xsr_ggH").setVal(1.)
+        
         self.modelBuilder.out.var("xsr_ggH").setConstant(True)
+        
         self.modelBuilder.doVar("xsr_qqH[1.,0.,2.]")
         if self.MHScaleWW :
           self.modelBuilder.out.var("xsr_qqH").setVal(1.041)
@@ -140,6 +142,8 @@ class Higgswidth(PhysicsModel):
         self.modelBuilder.doVar("SM_BR_hzg[0.0,0.0,1.0]")
 
         self.modelBuilder.doVar("CMS_widthH_kbkg[1.,0.,2.]")
+        #self.modelBuilder.doVar("CMS_widthH_kbkg[1.,0.9,1.1]")
+        
         self.modelBuilder.doVar("R[1.,0.,4.]")
         self.modelBuilder.doVar("kgluon[1.,0.,4.]")
         self.modelBuilder.doVar("kV[1.,0.,8.]")
@@ -160,20 +164,20 @@ class Higgswidth(PhysicsModel):
         self.modelBuilder.out.var("SM_BR_hzz").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hzz").setConstant(True)
         self.modelBuilder.out.var("SM_BR_htt").setVal(0.0)
-        self.modelBuilder.out.var("SM_BR_hmm").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_htt").setConstant(True)
+        self.modelBuilder.out.var("SM_BR_hmm").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hmm").setConstant(True)
         self.modelBuilder.out.var("SM_BR_htoptop").setVal(0.0)
-        self.modelBuilder.out.var("SM_BR_hcc").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_htoptop").setConstant(True)
+        self.modelBuilder.out.var("SM_BR_hcc").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hcc").setConstant(True)
         self.modelBuilder.out.var("SM_BR_hbb").setVal(0.0)
-        self.modelBuilder.out.var("SM_BR_hss").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hbb").setConstant(True)
+        self.modelBuilder.out.var("SM_BR_hss").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hss").setConstant(True)
         self.modelBuilder.out.var("SM_BR_hgluglu").setVal(0.0)
-        self.modelBuilder.out.var("SM_BR_hgg").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hgluglu").setConstant(True)
+        self.modelBuilder.out.var("SM_BR_hgg").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hgg").setConstant(True)
         self.modelBuilder.out.var("SM_BR_hzg").setVal(0.0)
         self.modelBuilder.out.var("SM_BR_hzg").setConstant(True)
@@ -191,15 +195,14 @@ class Higgswidth(PhysicsModel):
 
         self.SMH = SMHiggsBuilder(self.modelBuilder)
         for d in [ "htt", "hbb", "hcc", "hww", "hzz", "hgluglu", "htoptop", "hgg", "hzg", "hmm", "hss" ]: 
-           print "d = ",d
+           #print "d = ",d
            self.SMH.makeBR(d)
 
         if self.useKframework:
             self.modelBuilder.out.var("CMS_zz4l_scalerK").setVal(0.0)
         else:
             self.modelBuilder.out.var("CMS_zz4l_scalerK").setVal(1.0)
-            if not self.is2l2nu:
-               self.modelBuilder.out.var("CMS_zz4l_scalerK").setConstant(True)
+        self.modelBuilder.out.var("CMS_zz4l_scalerK").setConstant(True)
 
 	if self.GGsmfixed:
             self.modelBuilder.out.var("CMS_zz4l_GGsm")
@@ -234,15 +237,27 @@ class Higgswidth(PhysicsModel):
                 self.modelBuilder.out.var("R").setConstant(True)
             poi = "CMS_zz4l_GGsm"
 
+
+        print " poi = ", poi
+        #print " modelBuilder.out. = ", self.modelBuilder.out.var.Print()
+
+        # only WW needs to be rescaled 125 -> 125.6 GeV
         self.modelBuilder.factory_("expr::kgluon_WW(\"@0*@1\",kgluon,xsr_ggH)")
         self.modelBuilder.factory_("expr::kV_WW(\"@0*@1\",kV,xsr_qqH)")
+        #
 
+        # in ZZ we set the custodial symmetry
         self.modelBuilder.factory_("expr::kgluon_ZZ(\"@0*@1\",kgluon,lambdaWZ)")
         self.modelBuilder.factory_("expr::kV_ZZ(\"@0*@1\",kV,lambdaWZ)")  
+        #
 
         self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@3*@1*@4-sqrt(@0*@3*@1*@4*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,kgluon_ZZ,gammaK)")
         self.modelBuilder.factory_("expr::ggH_b_func(\"@2-sqrt(@0*@3*@1*@4*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,kgluon_ZZ,gammaK)")
         self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@3*@1*@4*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,kgluon_ZZ,gammaK)")
+
+        #self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@2*@1*@3-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kgluon_WW,gammaK)")
+        #self.modelBuilder.factory_("expr::ggH_b_func(\"1-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kgluon_WW,gammaK)")
+        #self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kgluon_WW,gammaK)")
 
         self.modelBuilder.factory_("expr::qqH_s_func(\"@0*@2*@1*@3-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kV_ZZ,gammaK)")
         self.modelBuilder.factory_("expr::qqH_b_func(\"1-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kV_ZZ,gammaK)")
