@@ -357,11 +357,10 @@ WW and ZZ
 
     r99t   higgsCombineTest.MultiDimFit.hzz4l.root \
            higgsCombineTest.MultiDimFit.hzz4l.root \
-           higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
-           higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
+           higgsCombineTest.MultiDimFit.hwwlvlv.root \
            HiggsWidth/test/drawCombinedWWZZ.cxx
 
-           higgsCombineTest.MultiDimFit.hwwlvlv.root \           
 
     
 Commit datacards to repository
