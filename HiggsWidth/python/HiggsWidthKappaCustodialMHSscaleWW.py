@@ -255,10 +255,6 @@ class Higgswidth(PhysicsModel):
         self.modelBuilder.factory_("expr::ggH_b_func(\"@2-sqrt(@0*@3*@1*@4*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,kgluon_ZZ,gammaK)")
         self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@3*@1*@4*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,kgluon_ZZ,gammaK)")
 
-        #self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@2*@1*@3-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kgluon_WW,gammaK)")
-        #self.modelBuilder.factory_("expr::ggH_b_func(\"1-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kgluon_WW,gammaK)")
-        #self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kgluon_WW,gammaK)")
-
         self.modelBuilder.factory_("expr::qqH_s_func(\"@0*@2*@1*@3-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kV_ZZ,gammaK)")
         self.modelBuilder.factory_("expr::qqH_b_func(\"1-sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kV_ZZ,gammaK)")
         self.modelBuilder.factory_("expr::qqH_sbi_func(\"sqrt(@0*@2*@1*@3)\",R,CMS_zz4l_GGsm,kV_ZZ,gammaK)")
