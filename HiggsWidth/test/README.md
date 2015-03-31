@@ -226,7 +226,12 @@ compare combined (0+1)j and 0j + 1j
 
     mv cc.png Limit_muFloat_012jet.png
 
-    
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.root \
+           HiggsWidth/test/drawCombined.cxx
+
     r99t   beforePhantomWeight/higgsCombineTest.MultiDimFit.0j.root \
            beforePhantomWeight/higgsCombineTest.MultiDimFit.1j.root \
            beforePhantomWeight/higgsCombineTest.MultiDimFit.2j.root \
@@ -308,7 +313,20 @@ Compare variable mu
            HiggsWidth/test/drawCombined.cxx
 
     mv cc.png Limit_muFloat_012jet_7TeV.png
+           
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           HiggsWidth/test/drawCombined.cxx          
 
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.root \
+           HiggsWidth/test/drawCombined.cxx    
+    
+    
 
 7 + 8 TeV
 

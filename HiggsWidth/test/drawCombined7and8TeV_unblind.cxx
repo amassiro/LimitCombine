@@ -24,7 +24,7 @@
  graphScan_0->SetLineStyle(2);
  graphScan_0->SetMarkerColor(kBlue);
  graphScan_0->SetLineColor(kBlue);
- 
+ std::cout << " n = " << n << std::endl;
  
  n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
@@ -34,7 +34,7 @@
  graphScan_1->SetLineStyle(2);
  graphScan_1->SetMarkerColor(kBlack);
  graphScan_1->SetLineColor(kBlack);
- 
+ std::cout << " n = " << n << std::endl; 
  
  n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_012 = new TGraph(n,limit_012->GetV2(),limit_012->GetV1());
@@ -44,7 +44,7 @@
  graphScan_012->SetLineStyle(2);
  graphScan_012->SetMarkerColor(kRed);
  graphScan_012->SetLineColor(kRed); 
- 
+ std::cout << " n = " << n << std::endl;
  
  
  
@@ -58,7 +58,7 @@
  unblind_graphScan_0->SetLineWidth(2);
  unblind_graphScan_0->SetMarkerColor(kBlue);
  unblind_graphScan_0->SetLineColor(kBlue);
- 
+ std::cout << " n = " << n << std::endl;
  
  n =  unblind_limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *unblind_graphScan_1 = new TGraph(n,unblind_limit_1->GetV2(),unblind_limit_1->GetV1());
@@ -67,7 +67,7 @@
  unblind_graphScan_1->SetLineWidth(2);
  unblind_graphScan_1->SetMarkerColor(kBlack);
  unblind_graphScan_1->SetLineColor(kBlack);
- 
+ std::cout << " n = " << n << std::endl;
  
  n =  unblind_limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *unblind_graphScan_012 = new TGraph(n,unblind_limit_012->GetV2(),unblind_limit_012->GetV1());
@@ -76,7 +76,7 @@
  unblind_graphScan_012->SetLineWidth(2);
  unblind_graphScan_012->SetMarkerColor(kRed);
  unblind_graphScan_012->SetLineColor(kRed); 
- 
+ std::cout << " n = " << n << std::endl;
  
  
  
