@@ -26,23 +26,24 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
 echo ">>>> all floating"
     
 
+# combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 120  -m 125.6        --expectSignal=1              --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40          --verbose -1
 
 combine -M MultiDimFit model_hwwlvlv_01j_together.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40          --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.together.root
 
-combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40          --verbose -1
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=-10,40          --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
 
-combine -M MultiDimFit model_hwwlvlv_1j.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40     --verbose -1
+combine -M MultiDimFit model_hwwlvlv_1j.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=-10,40     --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.1j.root
 
-combine -M MultiDimFit model_hwwlvlv_2j.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40     --verbose -1
+combine -M MultiDimFit model_hwwlvlv_2j.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=-10,40     --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.2j.root
 
-combine -M MultiDimFit model_hwwlvlv_012.root --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40     --verbose -1
+combine -M MultiDimFit model_hwwlvlv_012.root --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=-10,40     --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.012j.root
 
-combine -M MultiDimFit model_hwwlvlv_01.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40     --verbose -1
+combine -M MultiDimFit model_hwwlvlv_01.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=-10,40     --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.root
 
 
@@ -78,7 +79,7 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
 echo ">>>> all floating"
     
 
-
+    
 combine -M MultiDimFit model_hwwlvlv_0j_simple.root  --algo=grid --points 120  -m 125.6                      --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,40          --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.simple.root
 
