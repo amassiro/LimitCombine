@@ -61,7 +61,7 @@
  
  
  n =  unblind_limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
- TGraph *unblind_graphScan_1 = new TGraph(unblind_n,limit_1->GetV2(),unblind_limit_1->GetV1());
+ TGraph *unblind_graphScan_1 = new TGraph(n,unblind_limit_1->GetV2(),unblind_limit_1->GetV1());
  unblind_graphScan_1->SetTitle("");
  unblind_graphScan_1->SetMarkerStyle(21);
  unblind_graphScan_1->SetLineWidth(2);
@@ -189,32 +189,32 @@
 
 
 
- TLine *observed_line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n-1],1.0);
- observed_line1->SetLineWidth(2);
- observed_line1->SetLineStyle(2);
- observed_line1->Draw(); 
+ TLine *unblind_line1 = new TLine(0.0,1.0,(limit_012->GetV2())[n-1],1.0);
+ unblind_line1->SetLineWidth(2);
+ unblind_line1->SetLineStyle(2);
+ unblind_line1->Draw(); 
  
- TLine *observed_line2 = new TLine(0.0,3.84,(limit_012->GetV2())[n-1],3.84);
- observed_line2->SetLineWidth(2);
- observed_line2->SetLineStyle(2);
- observed_line2->Draw();
+ TLine *unblind_line2 = new TLine(0.0,3.84,(limit_012->GetV2())[n-1],3.84);
+ unblind_line2->SetLineWidth(2);
+ unblind_line2->SetLineStyle(2);
+ unblind_line2->Draw();
  
  
  
- double observed_value_x_1sigma = findCrossingOfScan1D(*observed_graphScan_012, 1.00);
- std::cout << " observed_value_x_1sigma = " << observed_value_x_1sigma << std::endl;
- double value_x_2sigma = findCrossingOfScan1D(*observed_graphScan_012, 3.84);
- std::cout << " observed_value_x_2sigma = " << observed_value_x_2sigma << std::endl;
+ double unblind_value_x_1sigma = findCrossingOfScan1D(*unblind_graphScan_012, 1.00);
+ std::cout << " unblind_value_x_1sigma = " << unblind_value_x_1sigma << std::endl;
+ double unblind_value_x_2sigma = findCrossingOfScan1D(*unblind_graphScan_012, 3.84);
+ std::cout << " unblind_value_x_2sigma = " << unblind_value_x_2sigma << std::endl;
  
- TLine *observed_vline1 = new TLine(observed_value_x_1sigma,0.0,observed_value_x_1sigma,1.0);
- observed_vline1->SetLineWidth(2);
- observed_vline1->SetLineStyle(2);
- observed_vline1->Draw(); 
+ TLine *unblind_vline1 = new TLine(unblind_value_x_1sigma,0.0,unblind_value_x_1sigma,1.0);
+ unblind_vline1->SetLineWidth(2);
+ unblind_vline1->SetLineStyle(1);
+ unblind_vline1->Draw(); 
  
- TLine *observed_vline2 = new TLine(observed_value_x_2sigma,0.0,observed_value_x_2sigma,3.84);
- observed_vline2->SetLineWidth(2);
- observed_vline2->SetLineStyle(2);
- observed_vline2->Draw();
+ TLine *unblind_vline2 = new TLine(unblind_value_x_2sigma,0.0,unblind_value_x_2sigma,3.84);
+ unblind_vline2->SetLineWidth(2);
+ unblind_vline2->SetLineStyle(1);
+ unblind_vline2->Draw();
  
  gPad->SetGrid();
  
