@@ -153,6 +153,8 @@ Automatic prepare
 
     sh HiggsWidth/test/prepareWWandZZ.sh
 
+    sh HiggsWidth/test/prepare_all_WW_unblind.sh
+
 Plot
 ====
 
@@ -317,6 +319,17 @@ Compare variable mu
 
     mv cc7and8TeV.png Limit_muFloat_012jet_7TeV_8TeV.png
 
+    r99t   higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           higgsCombineTest.MultiDimFit.012j.root \
+           higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV_unblind.cxx
+
+    mv cc7and8TeV.unblind.png Limit_muFloat_012jet_7TeV_8TeV_Observed.png
+       
+           
     r99t   Standard/higgsCombineTest.MultiDimFit.012j.7TeV.root \
            Standard/higgsCombineTest.MultiDimFit.012j.root \
            Standard/higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
