@@ -109,12 +109,12 @@ class Higgswidth(PhysicsModel):
             self.modelBuilder.out.var("CMS_widthH_kbkg").setConstant(True) # AM # my constraint
             #self.RVRFfixed = True
             if self.RVRFfixed:
-                self.modelBuilder.out.var("R").setRange(0.0,4.0)
+                self.modelBuilder.out.var("R").setRange(0.0001,4.0)
                 self.modelBuilder.out.var("RV").setConstant(True)
                 self.modelBuilder.out.var("RF").setConstant(True)
             else:
-                self.modelBuilder.out.var("RV").setRange(0.0,8.0)
-                self.modelBuilder.out.var("RF").setRange(0.0,4.0)
+                self.modelBuilder.out.var("RV").setRange(0.0001,8.0)
+                self.modelBuilder.out.var("RF").setRange(0.0001,4.0)
                 self.modelBuilder.out.var("R").setConstant(True)
                 #self.modelBuilder.out.var("RF").setConstant(True)
             if self.RandRVRFfixed:
