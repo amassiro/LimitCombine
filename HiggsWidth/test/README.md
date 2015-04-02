@@ -332,7 +332,20 @@ Compare variable mu
            Observed.higgsCombineTest.MultiDimFit.012j.simple.root \
            HiggsWidth/test/drawCombined.cxx
 
-           
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.root \
+           HiggsWidth/test/drawCombined_RVRF.cxx
+
+    r99t   higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.0j.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    combine -M MaxLikelihoodFit model_hwwlvlv_1j.root
+    python diffNuisances.py -a  mlfit.root -g plots.root   -p CMS_zz4l_GGsm
+
+
 
 7 + 8 TeV
 

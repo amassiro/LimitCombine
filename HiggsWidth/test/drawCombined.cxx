@@ -96,7 +96,7 @@
 //  graphScan_0->GetXaxis()->SetRangeUser(0,45);
 
 //  graphScan_0->GetXaxis()->SetRangeUser(0,30);
- graphScan_0->GetXaxis()->SetRangeUser(-40,40);
+ graphScan_0->GetXaxis()->SetRangeUser(-50,50);
  
  graphScan_1  ->Draw("l");
  graphScan_2  ->Draw("l");
