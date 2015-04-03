@@ -11,7 +11,7 @@
  
  int n;
  
- n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","deltaNLL<100","goff");
  TGraph *graphScan_0 = new TGraph(n,limit_0->GetV2(),limit_0->GetV1());
  graphScan_0->RemovePoint(0);
  graphScan_0->SetTitle("");
@@ -22,7 +22,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","deltaNLL<100","goff");
  TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
  graphScan_1->RemovePoint(0);
  graphScan_1->SetTitle("");

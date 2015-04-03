@@ -13,7 +13,7 @@
  
  int n;
  
- n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_0->Draw("2*deltaNLL:RF","","goff");
  TGraph *graphScan_0 = new TGraph(n,limit_0->GetV2(),limit_0->GetV1());
  graphScan_0->RemovePoint(0);
  graphScan_0->SetTitle("");
@@ -24,7 +24,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_1->Draw("2*deltaNLL:RF","","goff");
  TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
  graphScan_1->RemovePoint(0);
  graphScan_1->SetTitle("");
@@ -35,7 +35,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_2->Draw("2*deltaNLL:RF","","goff");
  TGraph *graphScan_2 = new TGraph(n,limit_2->GetV2(),limit_2->GetV1());
  graphScan_2->RemovePoint(0);
  graphScan_2->SetTitle("");
@@ -46,7 +46,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_012->Draw("2*deltaNLL:RF","","goff");
  TGraph *graphScan_012 = new TGraph(n,limit_012->GetV2(),limit_012->GetV1());
  graphScan_012->RemovePoint(0);
  graphScan_012->SetTitle("");
@@ -88,15 +88,15 @@
  
  
  graphScan_0->Draw("al");
- graphScan_0->GetXaxis()->SetTitle("r = #Gamma/#Gamma_{SM}");
+ graphScan_0->GetXaxis()->SetTitle("RF");
  graphScan_0->GetYaxis()->SetTitle("- 2#Delta logL");
 //  graphScan_0->GetYaxis()->SetRangeUser(0,10);
 //  graphScan_0->GetXaxis()->SetRangeUser(0,(limit_012->GetV2())[n-1]);
 //  graphScan_0->GetXaxis()->SetRangeUser(0,15);
 //  graphScan_0->GetXaxis()->SetRangeUser(0,45);
 
-//  graphScan_0->GetXaxis()->SetRangeUser(0,30);
- graphScan_0->GetXaxis()->SetRangeUser(-50,50);
+ graphScan_0->GetXaxis()->SetRangeUser(0,8);
+//  graphScan_0->GetXaxis()->SetRangeUser(-50,50);
  
  graphScan_1  ->Draw("l");
  graphScan_2  ->Draw("l");
