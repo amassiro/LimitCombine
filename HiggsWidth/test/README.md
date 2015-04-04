@@ -342,7 +342,9 @@ Compare variable mu
            Observed.higgsCombineTest.MultiDimFit.0j.root \
            HiggsWidth/test/drawExpObs.cxx
 
+    combine -M MaxLikelihoodFit model_hwwlvlv_0j.root
     combine -M MaxLikelihoodFit model_hwwlvlv_1j.root
+    combine -M MaxLikelihoodFit model_hwwlvlv_2j.root
     python diffNuisances.py -a  mlfit.root -g plots.root   -p CMS_zz4l_GGsm
 
 
