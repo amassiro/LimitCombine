@@ -347,7 +347,7 @@ Compare variable mu
     combine -M MaxLikelihoodFit model_hwwlvlv_2j.root
     python diffNuisances.py -a  mlfit.root -g plots.root   -p CMS_zz4l_GGsm
 
-
+    limit->Draw("2*deltaNLL:CMS_zz4l_GGsm:RF","deltaNLL<10");
 
 7 + 8 TeV
 
