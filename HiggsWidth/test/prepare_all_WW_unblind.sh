@@ -89,6 +89,11 @@ mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiD
 combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6    -t 10                --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
 
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 1000  -m 125.6    -t 100                --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Toys.higgsCombineTest.MultiDimFit.0j.GammaAndRF.root
+
+
+
 combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
 
