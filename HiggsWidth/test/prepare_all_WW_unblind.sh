@@ -92,6 +92,14 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
 combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 1000  -m 125.6    -t 100                --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Toys.higgsCombineTest.MultiDimFit.0j.GammaAndRF.root
 
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 250  -m 125.6    -t 100                --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Toys.higgsCombineTest.MultiDimFit.0j.Gamma.root
+
+combine -M MultiDimFit model_hwwlvlv_0j.root  --seed 1234 --algo=grid --points 250  -m 125.6    -t 300                --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.1234.root      Toys.higgsCombineTest.MultiDimFit.0j.Gamma.bis.root
+
+
+
 
 
 combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
@@ -105,6 +113,7 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
 combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
 combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 2400  -m 125.6                        --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.newnuisance.root
 
 combine   -M MultiDimFit model_hwwlvlv_1j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
 combine   -M MultiDimFit model_hwwlvlv_1j.root  --algo=grid --points 2400  -m 125.6                        --verbose -1
@@ -126,6 +135,28 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
     
     
     
+    
+
+combine          -M MultiDimFit model_hwwlvlv_01j_together.root  --algo=grid --points 240  -m 125.6       --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.together.root
+
+combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
+
+combine   -M MultiDimFit model_hwwlvlv_1j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.1j.root
+
+combine   -M MultiDimFit model_hwwlvlv_2j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.2j.root
+
+combine   -M MultiDimFit model_hwwlvlv_012.root --algo=grid --points 240  -m 125.6                        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.012j.root
+
+combine   -M MultiDimFit model_hwwlvlv_01.root  --algo=grid --points 240  -m 125.6                        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.root
+ 
+
+ 
     
 echo " --- "
 echo ">>>>  simple mth:mll "
