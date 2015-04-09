@@ -105,9 +105,12 @@ mv higgsCombineTest.MultiDimFit.mH125.6.1234.root      Toys.higgsCombineTest.Mul
 combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
 
+
+combine -M MultiDimFit model_hwwlvlv_0j.root   --robustFit 1  --algo=grid --points 240  -m 125.6                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1   
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
     
    
-combine          -M MultiDimFit model_hwwlvlv_01j_together.root  --algo=grid --points 240  -m 125.6       --verbose -1
+combine          -M MultiDimFit model_hwwlvlv_01j_together.root  --robustFit 1   --algo=grid --points 240  -m 125.6       --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.together.root
 
 combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
@@ -131,10 +134,21 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
  
     
     
-   
+text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j.root
+text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRVRFfixed  -o      model_hwwlvlv_0j.root  
+text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_0j.root  
+
+
+combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 10   -m 125.6         --robustFit 1               --verbose -1   
+combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240   -m 125.6         --robustFit 1               --verbose -1   
+combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 2400  -m 125.6         --robustFit 1               --verbose -1   
+combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 2400  -m 125.6         --robustFit 1               --verbose -1     --fastScan
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
+
     
     
-    
+combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240   -m 125.6   -t 300      --robustFit 1               --verbose -1   
+
     
 
 combine          -M MultiDimFit model_hwwlvlv_01j_together.root  --algo=grid --points 240  -m 125.6       --verbose -1
