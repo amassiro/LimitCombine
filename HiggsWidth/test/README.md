@@ -339,6 +339,18 @@ Compare variable mu
            HiggsWidth/test/drawCombined_RVRF.cxx
 
     r99t   higgsCombineTest.MultiDimFit.0j.root \
+           higgsCombineTest.MultiDimFit.0j.asimov.toysFreq.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   higgsCombineTest.MultiDimFit.0j.root \
+           higgsCombineTest.MultiDimFit.0j.toys.toysFreq.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
+    r99t   higgsCombineTest.MultiDimFit.0j.root \
+           higgsCombineTest.MultiDimFit.0j.toys.noSyst.root \
+           HiggsWidth/test/drawExpObs.cxx       
+           
+    r99t   higgsCombineTest.MultiDimFit.0j.root \
            Observed.higgsCombineTest.MultiDimFit.0j.root \
            HiggsWidth/test/drawExpObs.cxx
 

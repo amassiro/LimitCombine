@@ -18,7 +18,9 @@ class Higgswidth(PhysicsModel):
 
     def getYieldScale(self,bin,process):
         #if process == "WW": return "WW_func"
-       
+       #RF         = 0.0001       +/-  0.00475541        (limited)
+       #RV        = 8    +/-  4.19474   (limited)
+
         if process == "ggH_s": return "ggH_s_func"
         elif process == "ggH_b": return "ggH_b_func"
         elif process == "ggH_sbi": return "ggH_sbi_func"
@@ -137,7 +139,7 @@ class Higgswidth(PhysicsModel):
                 #self.modelBuilder.out.var("RF").setConstant(True)
             if self.RandRVRFfixed:
                 self.modelBuilder.out.var("R").setConstant(True)
-                self.modelBuilder.out.var("RF").setConstant(True)
+                self.modelBuilder.out.var("RV").setConstant(True)
                 self.modelBuilder.out.var("RF").setConstant(True)
                 
             #poi = "CMS_zz4l_GGsm,R"
@@ -146,23 +148,23 @@ class Higgswidth(PhysicsModel):
             #poi = "CMS_zz4l_GGsm,RF"
             #poi = "RV"
             
-        self.modelBuilder.factory_("expr::ggH_s_func(\"@0\",dummy)")
-        self.modelBuilder.factory_("expr::ggH_b_func(\"@0\",dummy)")
-        self.modelBuilder.factory_("expr::ggH_sbi_func(\"@0\",CMS_zz4l_GGsm)")
+        #self.modelBuilder.factory_("expr::ggH_s_func(\"@0\",dummy)")
+        #self.modelBuilder.factory_("expr::ggH_b_func(\"@0\",dummy)")
+        #self.modelBuilder.factory_("expr::ggH_sbi_func(\"@0\",CMS_zz4l_GGsm)")
 
-        self.modelBuilder.factory_("expr::qqH_s_func(\"@0\",dummy)")
-        self.modelBuilder.factory_("expr::qqH_b_func(\"@0\",dummy)")
-        self.modelBuilder.factory_("expr::qqH_sbi_func(\"@0\",CMS_zz4l_GGsm)")
+        #self.modelBuilder.factory_("expr::qqH_s_func(\"@0\",dummy)")
+        #self.modelBuilder.factory_("expr::qqH_b_func(\"@0\",dummy)")
+        #self.modelBuilder.factory_("expr::qqH_sbi_func(\"@0\",CMS_zz4l_GGsm)")
 
-        #self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@3*@1-sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
-        #self.modelBuilder.factory_("expr::ggH_b_func(\"@2-sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
-        #self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
+        self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@3*@1-sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
+        self.modelBuilder.factory_("expr::ggH_b_func(\"@2-sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
+        self.modelBuilder.factory_("expr::ggH_sbi_func(\"sqrt(@0*@3*@1*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
 
-        #self.modelBuilder.factory_("expr::qqH_s_func(\"@0*@2*@1-sqrt(@0*@2*@1)\",R,CMS_zz4l_GGsm,RV)")
-        #self.modelBuilder.factory_("expr::qqH_b_func(\"1-sqrt(@0*@2*@1)\",R,CMS_zz4l_GGsm,RV)")
-        #self.modelBuilder.factory_("expr::qqH_sbi_func(\"sqrt(@0*@2*@1)\",R,CMS_zz4l_GGsm,RV)")
+        self.modelBuilder.factory_("expr::qqH_s_func(\"@0*@2*@1-sqrt(@0*@2*@1)\",R,CMS_zz4l_GGsm,RV)")
+        self.modelBuilder.factory_("expr::qqH_b_func(\"1-sqrt(@0*@2*@1)\",R,CMS_zz4l_GGsm,RV)")
+        self.modelBuilder.factory_("expr::qqH_sbi_func(\"sqrt(@0*@2*@1)\",R,CMS_zz4l_GGsm,RV)")
 
-        self.modelBuilder.factory_("expr::WW_func(\"@0\",RWW)")
+        #self.modelBuilder.factory_("expr::WW_func(\"@0\",RWW)")
 
         #self.modelBuilder.factory_("expr::ggH_s_func(\"@0*@3*sqrt(@1*@1)-sqrt(@0*@3*sqrt(@1*@1)*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")
         #self.modelBuilder.factory_("expr::ggH_b_func(\"@2-sqrt(@0*@3*sqrt(@1*@1)*@2)\",R,CMS_zz4l_GGsm,CMS_widthH_kbkg,RF)")

@@ -16,6 +16,7 @@
  n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_0 = new TGraph(n,limit_0->GetV2(),limit_0->GetV1());
  graphScan_0->RemovePoint(0);
+ moveTGraph(graphScan_0);
  graphScan_0->SetTitle("");
  graphScan_0->SetMarkerStyle(21);
  graphScan_0->SetLineWidth(2);
@@ -27,6 +28,7 @@
  n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
  graphScan_1->RemovePoint(0);
+ moveTGraph(graphScan_1);
  graphScan_1->SetTitle("");
  graphScan_1->SetMarkerStyle(21);
  graphScan_1->SetLineWidth(2);
@@ -38,6 +40,7 @@
  n =  limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_2 = new TGraph(n,limit_2->GetV2(),limit_2->GetV1());
  graphScan_2->RemovePoint(0);
+ moveTGraph(graphScan_2);
  graphScan_2->SetTitle("");
  graphScan_2->SetMarkerStyle(21);
  graphScan_2->SetLineWidth(2);
@@ -49,6 +52,7 @@
  n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
  TGraph *graphScan_012 = new TGraph(n,limit_012->GetV2(),limit_012->GetV1());
  graphScan_012->RemovePoint(0);
+ moveTGraph(graphScan_012);
  graphScan_012->SetTitle("");
  graphScan_012->SetMarkerStyle(21);
  graphScan_012->SetLineWidth(2);

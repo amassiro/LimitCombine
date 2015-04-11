@@ -108,10 +108,45 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.Mult
 
 combine -M MultiDimFit model_hwwlvlv_0j.root   --robustFit 1  --algo=grid --points 240  -m 125.6                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1   
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.root
+
+
+# tests 
+text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j.root
+
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6   -t -1 --expectSignal=1 --saveToys                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60          --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.root
+
+
+# only statistics, and no nuisance fluctuations
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6   -t 30  --toysNoSystematics      --saveToys                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60          --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.toys.noSyst.root
+
+# only statistics, and no nuisance fluctuations, and using the best fit from data
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6   -t 50  --toysFrequentist      --saveToys                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60          --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.toys.toysFreq.new.root
+mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.toys.toysFreq.root
+
+# using asimov and using the best fit from data
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6   -t -1  --toysFrequentist      --saveToys                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60          --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.asimov.toysFreq.root
+
+# using asimov and using the best fit from data RV=RF=R=1
+text2workspace.py -m 125.6 datacards-0j/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuRandRVRFfixed  -o      model_hwwlvlv_0j.root
+combine -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6   -t -1  --toysFrequentist      --saveToys                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,60          --verbose 300  &> tmp.txt
+mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.asimov.toysFreq.root
+
+
+
+combine -M MultiDimFit model_hwwlvlv_0j.root   --robustFit 1  --algo=grid --points 240  -m 321                  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30               --verbose -1   
+mv higgsCombineTest.MultiDimFit.mH321.root      Observed.higgsCombineTest.MultiDimFit.0j.root
     
-   
+# tests (end)
+
+
 combine          -M MultiDimFit model_hwwlvlv_01j_together.root  --robustFit 1   --algo=grid --points 240  -m 125.6       --verbose -1
 mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.together.root
+
+
 
 combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6                        --verbose -1
 combine   -M MultiDimFit model_hwwlvlv_0j.root  --algo=grid --points 2400  -m 125.6                        --verbose -1
