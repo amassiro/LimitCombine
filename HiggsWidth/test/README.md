@@ -155,6 +155,8 @@ Automatic prepare
 
     sh HiggsWidth/test/prepare_all_WW_unblind.sh
 
+    sh HiggsWidth/test/prepare_all_WW_ZZ_unblind.sh
+
 Plot
 ====
 
@@ -371,15 +373,41 @@ Compare variable mu
     r99t   higgsCombineTest.MultiDimFit.2j.root \
            Observed.higgsCombineTest.MultiDimFit.2j.root \
            HiggsWidth/test/drawExpObs.cxx
+
+    - 7 TeV -       
            
+    r99t   higgsCombineTest.MultiDimFit.0j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.0j.7TeV.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   higgsCombineTest.MultiDimFit.1j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.7TeV.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   higgsCombineTest.MultiDimFit.2j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.7TeV.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
+    - 7 and 8 TeV -
+    
+    r99t   Observed.higgsCombineTest.MultiDimFit.012j.7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.7TeV.8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV.cxx
+       
+        
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            Observed.higgsCombineTest.MultiDimFit.0j.newnuisance.root \
            HiggsWidth/test/drawExpObs.cxx           
 
-    r99t   higgsCombineTest.MultiDimFit.2j.root \
-           Observed.higgsCombineTest.MultiDimFit.2j.root \
+    r99t   higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.0j.root \
            HiggsWidth/test/drawExpObs.cxx
-           
+
            
     combine -M MaxLikelihoodFit model_hwwlvlv_0j.root
     combine -M MaxLikelihoodFit model_hwwlvlv_1j.root
