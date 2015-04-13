@@ -13,7 +13,7 @@
  
  int n;
  
- n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_0->Draw("2*deltaNLL:CMS_zz4l_GGsm","deltaNLL<100","goff");
  TGraph *graphScan_0 = new TGraph(n,limit_0->GetV2(),limit_0->GetV1());
  graphScan_0->RemovePoint(0);
  moveTGraph(graphScan_0);
@@ -25,7 +25,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_1->Draw("2*deltaNLL:CMS_zz4l_GGsm","deltaNLL<100","goff");
  TGraph *graphScan_1 = new TGraph(n,limit_1->GetV2(),limit_1->GetV1());
  graphScan_1->RemovePoint(0);
  moveTGraph(graphScan_1);
@@ -37,7 +37,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_2->Draw("2*deltaNLL:CMS_zz4l_GGsm","deltaNLL<100","goff");
  TGraph *graphScan_2 = new TGraph(n,limit_2->GetV2(),limit_2->GetV1());
  graphScan_2->RemovePoint(0);
  moveTGraph(graphScan_2);
@@ -49,7 +49,7 @@
  std::cout << " n = " << n << std::endl;
  
  
- n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","","goff");
+ n =  limit_012->Draw("2*deltaNLL:CMS_zz4l_GGsm","deltaNLL<100","goff");
  TGraph *graphScan_012 = new TGraph(n,limit_012->GetV2(),limit_012->GetV1());
  graphScan_012->RemovePoint(0);
  moveTGraph(graphScan_012);
@@ -99,8 +99,8 @@
 //  graphScan_0->GetXaxis()->SetRangeUser(0,15);
 //  graphScan_0->GetXaxis()->SetRangeUser(0,45);
 
-//  graphScan_0->GetXaxis()->SetRangeUser(0,30);
- graphScan_0->GetXaxis()->SetRangeUser(-50,50);
+ graphScan_0->GetXaxis()->SetRangeUser(0,30);
+//  graphScan_0->GetXaxis()->SetRangeUser(-50,50);
  
  graphScan_1  ->Draw("l");
  graphScan_2  ->Draw("l");
@@ -112,7 +112,7 @@
 
  //---- legend
  
- leg = new TLegend(0.1,0.7,0.48,0.9);
+ leg = new TLegend(0.12,0.7,0.43,0.88);
  leg->AddEntry(graphScan_0,"0 jet","l");
  leg->AddEntry(graphScan_1,"1 jet","l");
  leg->AddEntry(graphScan_2,"2 jet","l");
