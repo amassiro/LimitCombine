@@ -232,6 +232,12 @@ compare combined (0+1)j and 0j + 1j
            Observed.higgsCombineTest.MultiDimFit.012j.root \
            HiggsWidth/test/drawCombined.cxx
 
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.root \
+           Observed.higgsCombineTest.MultiDimFit.01j.root \
+           HiggsWidth/test/drawCombined.cxx
+           
     r99t   beforePhantomWeight/higgsCombineTest.MultiDimFit.0j.root \
            beforePhantomWeight/higgsCombineTest.MultiDimFit.1j.root \
            beforePhantomWeight/higgsCombineTest.MultiDimFit.2j.root \
@@ -252,9 +258,13 @@ compare combined (0+1)j and 0j + 1j
            higgsCombineTest.MultiDimFit.1j.root \
            higgsCombineTest.MultiDimFit.01j.root \
            HiggsWidth/test/drawCombined01.cxx
-
+           
     mv cc01.png Limit_muFloat_01jet.png
 
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.root \
+           Observed.higgsCombineTest.MultiDimFit.01j.root \
+           HiggsWidth/test/drawCombined01.cxx
 
     r99t   higgsCombineTest.MultiDimFit.0j.fixmu.simple.root \
            higgsCombineTest.MultiDimFit.1j.fixmu.simple.root \
@@ -354,10 +364,22 @@ Compare variable mu
            Observed.higgsCombineTest.MultiDimFit.0j.root \
            HiggsWidth/test/drawExpObs.cxx
 
+    r99t   higgsCombineTest.MultiDimFit.1j.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   higgsCombineTest.MultiDimFit.2j.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            Observed.higgsCombineTest.MultiDimFit.0j.newnuisance.root \
            HiggsWidth/test/drawExpObs.cxx           
 
+    r99t   higgsCombineTest.MultiDimFit.2j.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
            
     combine -M MaxLikelihoodFit model_hwwlvlv_0j.root
     combine -M MaxLikelihoodFit model_hwwlvlv_1j.root
