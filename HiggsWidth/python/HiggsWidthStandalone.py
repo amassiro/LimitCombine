@@ -88,8 +88,7 @@ class Higgswidth(PhysicsModel):
         self.modelBuilder.out.var("dummy").setRange(0.0001,8.0)
         self.modelBuilder.out.var("dummy").setVal(0)
         self.modelBuilder.out.var("dummy").setConstant(True)
-        
-        
+           
         self.modelBuilder.doVar("RV2[1.,0.,8.]")
         if self.is2l2nu:
             #self.modelBuilder.doVar("CMS_zz4l_GGsm[1.,0.,30.]")
@@ -98,6 +97,10 @@ class Higgswidth(PhysicsModel):
             self.modelBuilder.doVar("R[1.,0.,4.]")
             self.modelBuilder.doVar("RF[1.,0.,4.]")
             self.modelBuilder.doVar("RV[1.,0.,8.]")
+
+            self.modelBuilder.out.var("CMS_widthH_kbkg") # AM # my constraint
+            self.modelBuilder.out.var("CMS_widthH_kbkg").setVal(1) # AM # my constraint
+            self.modelBuilder.out.var("CMS_widthH_kbkg").setConstant(True) # AM # my constraint
         
         if self.GGsmfixed:
             self.modelBuilder.out.var("CMS_zz4l_GGsm")
@@ -121,9 +124,6 @@ class Higgswidth(PhysicsModel):
             self.modelBuilder.out.var("RF").setVal(1)
             self.modelBuilder.out.var("RV").setVal(1)
             self.modelBuilder.out.var("R").setVal(1)
-            self.modelBuilder.out.var("CMS_widthH_kbkg")
-            self.modelBuilder.out.var("CMS_widthH_kbkg").setVal(1)
-            self.modelBuilder.out.var("CMS_widthH_kbkg").setConstant(True) # AM # my constraint
             #self.RVRFfixed = True
             if self.RVRFfixed:
                 self.modelBuilder.out.var("R").setRange(0.0001,4.0)

@@ -108,6 +108,31 @@ RVRFfixed
     mv higgsCombineTest.MultiDimFit.mH125.6.root      higgsCombineTest.MultiDimFit.01j.fixmu.root
 
 
+for spin analysis 
+
+    text2workspace.py -m 125.6 datacards-spin-0j/hww-19.47fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j_spin.root
+    text2workspace.py -m 125.6 datacards-spin-0j/hww-19.47fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nuGGsmRVRFfixed  -o      model_hwwlvlv_0j_spin.root
+
+    combine model_hwwlvlv_0j_spin.root -M GenerateOnly -t 1 --saveToys -s -1  --expectSignal 1   --setPhysicsModelParameters CMS_zz4l_GGsm=50  
+
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1  --expectSignal 1   --setPhysicsModelParameters CMS_zz4l_GGsm=50  
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345  --setPhysicsModelParameters CMS_zz4l_GGsm=50  
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345  --algo=grid --points 240      --setPhysicsModelParameters CMS_zz4l_GGsm=50    --verbose -1
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345  --algo=grid --points 240      --setPhysicsModelParameters CMS_zz4l_GGsm=50    --verbose 300 &> tmp.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.1.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.5.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.10.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.50.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.100.txt
+    
+CMS_norm_0j_WW    = -0.754391    +/-  0.146091  (limited)
+CMS_norm_0j_WW    = -0.793266    +/-  0.147802  (limited)
+CMS_norm_0j_WW    = -0.897046    +/-  0.176995  (limited)
+CMS_norm_0j_WW    = -0.937817    +/-  0.156848  (limited)
+CMS_norm_0j_WW    = -0.937817    +/-  0.156848  (limited)
+
+
+    
 all floating
 
 
