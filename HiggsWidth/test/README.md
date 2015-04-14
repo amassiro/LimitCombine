@@ -119,20 +119,34 @@ for spin analysis
     combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345  --setPhysicsModelParameters CMS_zz4l_GGsm=50  
     combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345  --algo=grid --points 240      --setPhysicsModelParameters CMS_zz4l_GGsm=50    --verbose -1
     combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345  --algo=grid --points 240      --setPhysicsModelParameters CMS_zz4l_GGsm=50    --verbose 300 &> tmp.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.1.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.5.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.10.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.50.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345        --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.100.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.1.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.5.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.10.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.50.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.100.txt
+
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.A.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.B.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.C.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.D.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s 12345   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.E.txt
+
     
-CMS_norm_0j_WW    = -0.754391    +/-  0.146091  (limited)
-CMS_norm_0j_WW    = -0.793266    +/-  0.147802  (limited)
-CMS_norm_0j_WW    = -0.897046    +/-  0.176995  (limited)
-CMS_norm_0j_WW    = -0.937817    +/-  0.156848  (limited)
-CMS_norm_0j_WW    = -0.937817    +/-  0.156848  (limited)
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit   --setPhysicsModelParameters CMS_zz4l_GGsm=1  --toysFile higgsCombineTest.GenerateOnly.mH120.199111213.root
+        
+        
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.A.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.B.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.C.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.D.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.E.txt
 
 
-    
+    cat tmp.*.txt | grep "CMS_norm_0j_WW" | grep "+/-" | grep -v RooRealVar
+    cat tmp.*.txt | grep "R" | grep "+/-" | grep -v RooRealVar | grep limited
+
+
+
 all floating
 
 
