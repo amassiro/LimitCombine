@@ -420,7 +420,16 @@ Compare variable mu
            Observed.higgsCombineTest.MultiDimFit.012j.root \
            HiggsWidth/test/drawExpObs.cxx
 
-           
+      
+    r99t Observed.higgsCombineTest.MultiDimFit.0j.root  HiggsWidth/test/draw2D.cxx
+    r99t Observed.higgsCombineTest.MultiDimFit.1j.root  HiggsWidth/test/draw2D.cxx
+    r99t Observed.higgsCombineTest.MultiDimFit.2j.root  HiggsWidth/test/draw2D.cxx
+    
+    r99t higgsCombineTest.MultiDimFit.0j.root  HiggsWidth/test/draw2D.cxx
+    r99t higgsCombineTest.MultiDimFit.1j.root  HiggsWidth/test/draw2D.cxx
+    r99t higgsCombineTest.MultiDimFit.2j.root  HiggsWidth/test/draw2D.cxx
+    
+      
     - 7 TeV -       
            
     r99t   higgsCombineTest.MultiDimFit.0j.7TeV.root \
