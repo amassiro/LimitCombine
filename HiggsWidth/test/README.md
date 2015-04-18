@@ -135,18 +135,21 @@ for spin analysis
     combine model_hwwlvlv_0j_spin.root -M MultiDimFit   --setPhysicsModelParameters CMS_zz4l_GGsm=1  --toysFile higgsCombineTest.GenerateOnly.mH120.199111213.root
         
         
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.A.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.B.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.C.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.D.txt
-    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1   --toysFrequentist     --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.E.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1 --toysNoSystematics   --setPhysicsModelParameters CMS_zz4l_GGsm=1    --verbose 300 &> tmp.A.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1 --toysNoSystematics   --setPhysicsModelParameters CMS_zz4l_GGsm=5    --verbose 300 &> tmp.B.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1 --toysNoSystematics   --setPhysicsModelParameters CMS_zz4l_GGsm=10   --verbose 300 &> tmp.C.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1 --toysNoSystematics   --setPhysicsModelParameters CMS_zz4l_GGsm=50   --verbose 300 &> tmp.D.txt
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1 --toysNoSystematics   --setPhysicsModelParameters CMS_zz4l_GGsm=100  --verbose 300 &> tmp.E.txt
 
+    combine model_hwwlvlv_0j_spin.root -M MultiDimFit -t 1 --saveToys -s -1 --toysNoSystematics   --setPhysicsModelParameters CMS_norm_0j_WW=2  --verbose 300 &> tmp.E.txt
 
+    
     cat tmp.*.txt | grep "CMS_norm_0j_WW" | grep "+/-" | grep -v RooRealVar
     cat tmp.*.txt | grep "R" | grep "+/-" | grep -v RooRealVar | grep limited
 
 
-
+    
+    
 all floating
 
 
@@ -460,6 +463,28 @@ Compare variable mu
 
     limit->Draw("2*deltaNLL:CMS_zz4l_GGsm:RF","deltaNLL<10");
 
+WW fix
+ 
+    cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
+    cmsenv
+    
+    scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/Hwidth/0jetDF8TeVWWfixed.tgz ./
+    tar -xf 0jetDF8TeVWWfixed.tgz
+    mv datacards/ datacards-0j-wwfix
+
+    text2workspace.py -m 125.6 datacards-0j-wwfix/hww-19.36fb.mH125.of_0j_shape.txt -P LimitCombine.HiggsWidth.HiggsWidthStandalone:higgswidth  --PO=is2l2nu  -o      model_hwwlvlv_0j_wwfix.root
+
+    combine   -M MultiDimFit model_hwwlvlv_0j_wwfix.root  --algo=grid --points 2400  -m 125.6                        --verbose -1
+    mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.0j.wwfix.root
+
+    combine -M MultiDimFit model_hwwlvlv_0j_wwfix.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1 --saveToys                     --verbose -1
+    mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.0j.wwfix.root
+
+    r99t   higgsCombineTest.MultiDimFit.0j.wwfix.root \
+           Observed.higgsCombineTest.MultiDimFit.0j.wwfix.root \
+           HiggsWidth/test/drawExpObs.cxx
+     
+    
 7 + 8 TeV
 
     r99t   higgsCombineTest.MultiDimFit.012j.7TeV.root \
