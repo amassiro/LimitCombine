@@ -1,6 +1,8 @@
 {
  
-  int n =  limit->Draw("2*deltaNLL:CMS_zz4l_GGsm:R","","goff");
+//   int n =  limit->Draw("2*deltaNLL:CMS_zz4l_GGsm:R","","goff");
+//   int n =  limit->Draw("2*deltaNLL:CMS_zz4l_GGsm:RV","","goff");
+  int n =  limit->Draw("2*deltaNLL:CMS_zz4l_GGsm:RF","","goff");
   
 //  int n =  limit->Draw("2*deltaNLL:R","","goff");
  TGraph2D *graphScan = new TGraph2D(n,limit->GetV2(),limit->GetV3(),limit->GetV1());
