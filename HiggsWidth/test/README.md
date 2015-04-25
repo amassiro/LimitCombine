@@ -405,6 +405,49 @@ Compare variable mu
            Observed.higgsCombineTest.MultiDimFit.012j.root \
            HiggsWidth/test/drawCombined_RVRF.cxx
 
+
+    r99t   Asimov.higgsCombineTest.MultiDimFit.0j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.0j.Gonly.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   Asimov.higgsCombineTest.MultiDimFit.1j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.Gonly.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   Asimov.higgsCombineTest.MultiDimFit.2j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.Gonly.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   Asimov.higgsCombineTest.MultiDimFit.01j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.01j.Gonly.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
+           
+     r99t  Asimov.higgsCombineTest.MultiDimFit.0j.Gonly.root \
+           Asimov.higgsCombineTest.MultiDimFit.1j.Gonly.root \
+           Asimov.higgsCombineTest.MultiDimFit.2j.Gonly.root \
+           Asimov.higgsCombineTest.MultiDimFit.012j.Gonly.root \
+           HiggsWidth/test/drawCombined.cxx
+
+     r99t  Observed.higgsCombineTest.MultiDimFit.0j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.Gonly.root \
+           HiggsWidth/test/drawCombined.cxx
+           
+     r99t  Observed.higgsCombineTest.MultiDimFit.0j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.Gonly.root \
+           Observed.higgsCombineTest.MultiDimFit.01j.Gonly.root \
+           HiggsWidth/test/drawCombined.cxx
+                
+     r99t  Asimov.higgsCombineTest.MultiDimFit.0j.Gonly.root \
+           Asimov.higgsCombineTest.MultiDimFit.1j.Gonly.root \
+           Asimov.higgsCombineTest.MultiDimFit.2j.Gonly.root \
+           Asimov.higgsCombineTest.MultiDimFit.01j.Gonly.root \
+           HiggsWidth/test/drawCombined.cxx
+                
+                
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.0j.asimov.toysFreq.root \
            HiggsWidth/test/drawExpObs.cxx
@@ -485,7 +528,8 @@ Compare variable mu
            Observed.higgsCombineTest.MultiDimFit.0j.root \
            HiggsWidth/test/drawExpObs.cxx
 
-           
+          
+          
     combine -M MaxLikelihoodFit model_hwwlvlv_0j.root
     combine -M MaxLikelihoodFit model_hwwlvlv_1j.root
     combine -M MaxLikelihoodFit model_hwwlvlv_2j.root

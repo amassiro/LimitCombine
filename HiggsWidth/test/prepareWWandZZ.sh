@@ -118,6 +118,40 @@ echo ">>>> WW is2l2nu and mH scaled MHScaleWW in combination with HZZ"
 # 
 # 
 
+
+
+  combineCards.py      hzz4l_7TeV_4mu_onshell_01j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4muS_7TeV_0.txt \
+   hzz4l_8TeV_4mu_onshell_01j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4muS_8TeV_0.txt \
+   hzz4l_7TeV_4mu_onshell_2j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4muS_7TeV_1.txt \
+   hzz4l_8TeV_4mu_onshell_2j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4muS_8TeV_1.txt \
+   hzz4l_7TeV_4mu_offshell=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4muS_7TeV.txt \
+   hzz4l_8TeV_4mu_offshell=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4muS_8TeV.txt \
+   hzz4l_7TeV_4e_onshell_01j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4eS_7TeV_0.txt \
+   hzz4l_8TeV_4e_onshell_01j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4eS_8TeV_0.txt \
+   hzz4l_7TeV_4e_onshell_2j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4eS_7TeV_1.txt \
+   hzz4l_8TeV_4e_onshell_2j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4eS_8TeV_1.txt \
+   hzz4l_7TeV_4e_offshell=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4eS_7TeV.txt \
+   hzz4l_8TeV_4e_offshell=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_4eS_8TeV.txt \
+   hzz4l_7TeV_2e2mu_onshell_01j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_2e2muS_7TeV_0.txt \
+   hzz4l_8TeV_2e2mu_onshell_01j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_2e2muS_8TeV_0.txt \
+   hzz4l_7TeV_2e2mu_onshell_2j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_2e2muS_7TeV_1.txt \
+   hzz4l_8TeV_2e2mu_onshell_2j=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_2e2muS_8TeV_1.txt \
+   hzz4l_7TeV_2e2mu_offshell=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_2e2muS_7TeV.txt \
+   hzz4l_8TeV_2e2mu_offshell=/afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/././hzz4l_2e2muS_8TeV.txt \
+   >   hwidth_hzz4l_mycomb.txt
+   
+   
+    text2workspace.py -m 125.6 hwidth_hzz4l_mycomb.txt          -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz4l.root
+    text2workspace.py -m 125.6 hwidth_hzz4l_mycomb.txt          -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth               --PO=MHScaleWW  -o    model_hzz4l.root
+
+    text2workspace.py -m 125.6 hwidth_012jet.txt  -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth       --PO=is2l2nu         --PO=MHScaleWW  -o    model_hww_newmodel.root
+    text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_incl.dat   -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=is2l2nu --PO=MHScaleWW  -o    model_hzz2l2v.root
+
+
+    text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=is2l2nu --PO=MHScaleWW  -o    model_hzz2l2v.root
+   
+   
+   
     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz4l/hzz4l_all.txt          -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth               --PO=MHScaleWW  -o    model_hzz4l.root
     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWW:higgswidth  --PO=is2l2nu --PO=MHScaleWW  -o    model_hzz2l2v.root
     #     text2workspace.py -m 125.6 /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/datacards/HIG-14-002/hzz2l2nu/card_combined.dat   -P LimitCombine.HiggsWidth.testB:higgswidth                               --PO=is2l2nu --PO=MHScaleWW  -o    model_hzz2l2v.root
@@ -132,6 +166,7 @@ echo ">>>> WW is2l2nu and mH scaled MHScaleWW in combination with HZZ"
     combine -M MultiDimFit model_hzz2l2v.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1 --saveToys  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30          --verbose -1
     mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.hzz2l2v.root
     
+    combine -M MultiDimFit model_hww_newmodel.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1 --saveToys  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30          --verbose -1
     combine -M MultiDimFit model_hwwlvlv.root  --algo=grid --points 120  -m 125.6   -t -1 --expectSignal=1 --saveToys  --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,30          --verbose -1
     mv higgsCombineTest.MultiDimFit.mH125.6.123456.root      higgsCombineTest.MultiDimFit.hwwlvlv.root
     
@@ -140,6 +175,14 @@ echo ">>>> WW is2l2nu and mH scaled MHScaleWW in combination with HZZ"
 
     
     
+    
+    
+    
+    
+    text2workspace.py -m 125.6 datacards-0j-it-should-work/hww-19.36fb.mH125.of_0j_shape.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_0j.root
+    combine -M MaxLikelihoodFit model_hwwlvlv_0j.root
+    python diffNuisances.py -a  mlfit.root -g plots.root   -p CMS_zz4l_GGsm
+    python diffNuisances.py -a  mlfit.root -g plots.root   -p CMS_zz4l_GGsm &> tmp.txt
     
     
     

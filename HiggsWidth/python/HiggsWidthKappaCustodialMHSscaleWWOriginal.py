@@ -240,8 +240,10 @@ class Higgswidth(PhysicsModel):
                 self.modelBuilder.out.var("kV").setConstant(True)
                 self.modelBuilder.out.var("kgluon").setConstant(True)
             else:
-                self.modelBuilder.out.var("kV").setRange(0.0,8.0)
-                self.modelBuilder.out.var("kgluon").setRange(0.0,4.0)
+                self.modelBuilder.out.var("kV").setRange(0.0,100.0)
+                self.modelBuilder.out.var("kgluon").setRange(0.0,100.0)
+                #self.modelBuilder.out.var("kV").setRange(0.0,8.0)
+                #self.modelBuilder.out.var("kgluon").setRange(0.0,4.0)
                 self.modelBuilder.out.var("R").setConstant(True)
             poi = "CMS_zz4l_GGsm"
 

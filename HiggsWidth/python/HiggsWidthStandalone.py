@@ -146,6 +146,7 @@ class Higgswidth(PhysicsModel):
             #poi = "CMS_zz4l_GGsm,RV,RF"
             poi = "CMS_zz4l_GGsm"
             #poi = "CMS_zz4l_GGsm,RF"
+            #poi = "CMS_zz4l_GGsm,RV"
             #poi = "RV"
             
         #self.modelBuilder.factory_("expr::ggH_s_func(\"@0\",dummy)")

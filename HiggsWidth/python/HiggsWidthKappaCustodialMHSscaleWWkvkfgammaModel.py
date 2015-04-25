@@ -137,8 +137,10 @@ class Higgswidth(PhysicsModel):
             self.modelBuilder.doVar("CMS_widthH_kbkg[1.,0.,2.]")
             self.modelBuilder.doVar("R[1.,0.,4.]")
             self.modelBuilder.doVar("R1j[1.,0.,4.]")            
-            self.modelBuilder.doVar("kgluon[1.,0.,4.]")
-            self.modelBuilder.doVar("kV[1.,0.,8.]")
+            self.modelBuilder.doVar("kgluon[1.,0.,400.]")
+            self.modelBuilder.doVar("kV[1.,0.,800.]")
+            #self.modelBuilder.doVar("kgluon[1.,0.,4.]")
+            #self.modelBuilder.doVar("kV[1.,0.,8.]")
             self.modelBuilder.doVar("CMS_zz4l_GGsm[1.,0.,30.]")
             #self.modelBuilder.doVar("kV[0.0,0.0,1.0]") 
             self.modelBuilder.doVar("ktau[0.0,0.0,2.0]")
@@ -230,8 +232,10 @@ class Higgswidth(PhysicsModel):
                 self.modelBuilder.out.var("kV").setConstant(True)
                 self.modelBuilder.out.var("kgluon").setConstant(True)
             else:
-                self.modelBuilder.out.var("kV").setRange(0.0,8.0)
-                self.modelBuilder.out.var("kgluon").setRange(0.0,4.0)
+                #self.modelBuilder.out.var("kV").setRange(0.0,8.0)
+                #self.modelBuilder.out.var("kgluon").setRange(0.0,4.0)
+                self.modelBuilder.out.var("kV").setRange(0.0,800.0)
+                self.modelBuilder.out.var("kgluon").setRange(0.0,400.0)
                 self.modelBuilder.out.var("R").setConstant(True)
             poi = "CMS_zz4l_GGsm"
 
@@ -252,13 +256,13 @@ class Higgswidth(PhysicsModel):
         # No CMS_widthH_kbkg uncertainty for WW
         # new model: onshell  -> kk/gamma 
         #            offshell -> kk
-        self.modelBuilder.factory_("expr::ggH_s_funcWW(\"@0*@1*@2-sqrt(@0*@1*@2)\",R,kgluon_WW,gammaK)")
-        self.modelBuilder.factory_("expr::ggH_b_funcWW(\"1-sqrt(@0*@1*@2)\",R,kgluon_WW,gammaK)")
-        self.modelBuilder.factory_("expr::ggH_sbi_funcWW(\"sqrt(@0*@1*@2)\",R,kgluon_WW,gammaK)")
+        self.modelBuilder.factory_("expr::ggH_s_funcWW(\"@0*@1-sqrt(@0*@1)\",R,kgluon_WW)")
+        self.modelBuilder.factory_("expr::ggH_b_funcWW(\"1-sqrt(@0*@1)\",R,kgluon_WW)")
+        self.modelBuilder.factory_("expr::ggH_sbi_funcWW(\"sqrt(@0*@1)\",R,kgluon_WW)")
 
-        self.modelBuilder.factory_("expr::qqH_s_funcWW(\"@0*@1*@2-sqrt(@0*@1*@2)\",R,,kV_WW,gammaK)")
-        self.modelBuilder.factory_("expr::qqH_b_funcWW(\"1-sqrt(@0*@1*@2)\",R,,kV_WW,gammaK)")
-        self.modelBuilder.factory_("expr::qqH_sbi_funcWW(\"sqrt(@0*@1*@2)\",R,,kV_WW,gammaK)")
+        self.modelBuilder.factory_("expr::qqH_s_funcWW(\"@0*@1-sqrt(@0*@1)\",R,kV_WW)")
+        self.modelBuilder.factory_("expr::qqH_b_funcWW(\"1-sqrt(@0*@1)\",R,kV_WW)")
+        self.modelBuilder.factory_("expr::qqH_sbi_funcWW(\"sqrt(@0*@1)\",R,kV_WW)")
 
         self.modelBuilder.factory_("expr::ggH_funcWW(\"@0*@1/@2\",R,kgluon_WW,CMS_zz4l_GGsm)")
         self.modelBuilder.factory_("expr::qqH_funcWW(\"@0*@1/@2\",R,kV_WW,CMS_zz4l_GGsm)")
