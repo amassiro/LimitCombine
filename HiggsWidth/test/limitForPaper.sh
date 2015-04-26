@@ -115,7 +115,7 @@ text2workspace.py -m 125.6 hwidth_2jet-7TeV.txt        -P LimitCombine.HiggsWidt
 text2workspace.py -m 125.6 hwidth_012jet-7TeV.txt      -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_012j-7TeV.root
 text2workspace.py -m 125.6 hwidth_01jet-7TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_01j-7TeV.root
 
-text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_01j-7TeV-8TeV.root
+text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_012j-7TeV-8TeV.root
 
 
 
@@ -210,13 +210,11 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Asimov.higgsCombineTest.MultiD
 
 # 7 + 8 TeV
 
+combine   -M MultiDimFit model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 2400  -m 125.6              --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root
 
-combine   -M MultiDimFit model_hwwlvlv_01j-7TeV-8TeV.root  --algo=grid --points 2400  -m 125.6              --verbose -1
-mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.01j.StandardModel-7TeV-8TeV.root
-
-combine   -M MultiDimFit model_hwwlvlv_01j-7TeV-8TeV.root  --algo=grid --points 2400  -t -1 -m 125.6        --verbose -1
-mv higgsCombineTest.MultiDimFit.mH125.6.root      Asimov.higgsCombineTest.MultiDimFit.01j.StandardModel-7TeV-8TeV.root
-
+combine   -M MultiDimFit model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 2400  -t -1 -m 125.6        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root
 
 
 

@@ -263,6 +263,45 @@ compare combined (0+1)j and 0j + 1j
 
     mv cc.png Limit_muFix1_012jet.png
 
+    
+    r99t   Asimov.higgsCombineTest.MultiDimFit.0j.StandardModel.root \
+           Asimov.higgsCombineTest.MultiDimFit.1j.StandardModel.root \
+           Asimov.higgsCombineTest.MultiDimFit.2j.StandardModel.root \
+           Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
+           HiggsWidth/test/drawCombined.cxx
+
+    r99t   Observed.higgsCombineTest.MultiDimFit.0j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
+           HiggsWidth/test/drawCombined.cxx
+    
+    r99t   Asimov.higgsCombineTest.MultiDimFit.0j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.0j.StandardModel.root \
+           HiggsWidth/test/drawExpObs.cxx
+
+    r99t   Asimov.higgsCombineTest.MultiDimFit.1j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.1j.StandardModel.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
+    r99t   Asimov.higgsCombineTest.MultiDimFit.2j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.2j.StandardModel.root \
+           HiggsWidth/test/drawExpObs.cxx
+           
+           
+                 
+    - 7 and 8 TeV -
+    
+    r99t   Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV.root \
+           Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
+           Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV.cxx
+
+    r99t   Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV.cxx
+           
 
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.1j.root \
