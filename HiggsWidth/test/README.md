@@ -199,6 +199,8 @@ Automatic prepare
 
     sh HiggsWidth/test/prepare_all_WW_ZZ_unblind.sh
 
+    sh HiggsWidth/test/limitForPaper.sh
+
 Plot
 ====
 
