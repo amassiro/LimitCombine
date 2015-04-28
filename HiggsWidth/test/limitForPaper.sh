@@ -219,6 +219,14 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Asimov.higgsCombineTest.MultiD
 
 
 
+# get mu
+text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=RVRFfixed  --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
+combine -M MaxLikelihoodFit --robustFit 1 --redefineSignalPOI R   model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
+
+
+
+
+
 
 
 

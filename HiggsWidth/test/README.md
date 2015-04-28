@@ -302,7 +302,16 @@ compare combined (0+1)j and 0j + 1j
            Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root \
            HiggsWidth/test/drawCombined7and8TeV.cxx
            
-
+    r99t   Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV.root \
+           Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
+           Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
+           Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.root \
+           HiggsWidth/test/drawCombined7and8TeV_unblind.cxx
+           
+           
+           
     r99t   higgsCombineTest.MultiDimFit.0j.root \
            higgsCombineTest.MultiDimFit.1j.root \
            higgsCombineTest.MultiDimFit.2j.root \
