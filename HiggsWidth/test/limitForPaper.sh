@@ -220,11 +220,23 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root      Asimov.higgsCombineTest.MultiD
 
 
 # get mu
-text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=RVRFfixed  --PO=is2l2nu --PO=MHScaleWW  -o    model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
-combine -M MaxLikelihoodFit --robustFit 1 --redefineSignalPOI R   model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
+text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=is2l2nuGGsmRVRFfixed  --PO=MHScaleWW  -o    model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
+combine -M MaxLikelihoodFit --robustFit 1  model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
+combine -M MaxLikelihoodFit --robustFit 1  -t -1  model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root
+ 
+combine -M MaxLikelihoodFit model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root          --preFitValue=1.0 --robustFit=1 --minimizerAlgo=Minuit2 --minimizerAlgoForMinos=Minuit2 --minimizerStrategy=1 --minimizerTolerance=0.009 --minimizerToleranceForMinos=0.01 --cminFallbackAlgo Minuit,0.001 --stepSize=0.05 --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND
+combine -M MaxLikelihoodFit model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root  -t -1   --preFitValue=1.0 --robustFit=1 --minimizerAlgo=Minuit2 --minimizerAlgoForMinos=Minuit2 --minimizerStrategy=1 --minimizerTolerance=0.009 --minimizerToleranceForMinos=0.01 --cminFallbackAlgo Minuit,0.001 --stepSize=0.05 --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND
 
 
 
+text2workspace.py -m 125.6 hwidth_012jet.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth  --PO=is2l2nuGGsmRVRFfixed  --PO=MHScaleWW  -o    model_hwwlvlv_012j-RVRFfixed.root
+combine -M MaxLikelihoodFit --robustFit 1  model_hwwlvlv_012j-RVRFfixed.root
+
+combine   -M MultiDimFit model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root  --algo=grid --points 240  -m 125.6        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Observed.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.MuScan.root
+
+combine   -M MultiDimFit model_hwwlvlv_012j-7TeV-8TeV-RVRFfixed.root  --algo=grid --points 240 -t -1 -m 125.6        --verbose -1
+mv higgsCombineTest.MultiDimFit.mH125.6.root      Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel-7TeV-8TeV.MuScan.root
 
 
 
