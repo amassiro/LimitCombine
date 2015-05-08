@@ -277,4 +277,16 @@ text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.Hig
 
 
 
+combine   -M MultiDimFit    model_hwwlvlv_0j.root  --algo=grid --points 240  -m 125.6  --minimizerAlgo=Minuit2 --minimizerAlgoForMinos=Minuit2 --minimizerStrategy=1 --minimizerTolerance=0.009 --minimizerToleranceForMinos=0.01 --cminFallbackAlgo Minuit,0.001  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND     --verbose -1
+
+combine   -M MultiDimFit    model_hwwlvlv10j.root  --algo=grid --points 240  -m 125.6  --minimizerAlgo=Minuit2 --minimizerAlgoForMinos=Minuit2 --minimizerStrategy=1 --minimizerTolerance=0.009 --minimizerToleranceForMinos=0.01 --cminFallbackAlgo Minuit,0.001  --X-rtd FITTER_NEW_CROSSING_ALGO --X-rtd FITTER_NEVER_GIVE_UP --X-rtd FITTER_BOUND     --verbose -1
+
+
+
+
+
+
+
+
+
 
