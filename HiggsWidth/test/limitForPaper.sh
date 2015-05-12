@@ -102,6 +102,21 @@ combineCards.py       hww_of0j=../../../datacards/HIG-14-032/125/hww-19.36fb.mH1
                       >   hwidth_012jet-7TeV-8TeV.txt
          
 
+combineCards.py       hww_of0j=../../../datacards/HIG-14-032/125/hww-19.36fb.mH125.of_0j_shape.txt \
+                      hww_of0j7TeV=../../../datacards/HIG-14-032/125/hww-4.94fb.mH125.of_0j_shape.txt \
+                      >   hwidth_0jet-7TeV-8TeV.txt
+
+combineCards.py       hww_of1j=../../../datacards/HIG-14-032/125/hww-19.36fb.mH125.of_1j_shape.txt \
+                      hww_of1j7TeV=../../../datacards/HIG-14-032/125/hww-4.94fb.mH125.of_1j_shape.txt \
+                      >   hwidth_1jet-7TeV-8TeV.txt
+
+combineCards.py       hww_of2j=../../../datacards/HIG-14-032/125/hww-19.36fb.mH125.of_2j_shape.txt \
+                      hww_of2j7TeV=../../../datacards/HIG-14-032/125/hww-4.94fb.mH125.of_2j_shape.txt \
+                      >   hwidth_2jet-7TeV-8TeV.txt
+
+                      
+         
+         
          
          
          
@@ -273,6 +288,15 @@ text2workspace.py -m 125.6 hwidth_012jet-7TeV.txt      -P LimitCombine.HiggsWidt
 text2workspace.py -m 125.6 hwidth_01jet-7TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed --PO=MHScaleWW  -o    model_hwwlvlv_01j-7TeV.root
 
 text2workspace.py -m 125.6 hwidth_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed --PO=MHScaleWW  -o    model_hwwlvlv_012j-7TeV-8TeV.root
+
+
+
+
+
+text2workspace.py -m 125.6 hwidth_0jet-7TeV-8TeV.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed --PO=MHScaleWW  -o    model_hwwlvlv_0j-7TeV-8TeV.root
+text2workspace.py -m 125.6 hwidth_1jet-7TeV-8TeV.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed --PO=MHScaleWW  -o    model_hwwlvlv_1j-7TeV-8TeV.root
+text2workspace.py -m 125.6 hwidth_2jet-7TeV-8TeV.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed --PO=MHScaleWW  -o    model_hwwlvlv_2j-7TeV-8TeV.root
+
 
 
 
