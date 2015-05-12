@@ -36,8 +36,7 @@ class Higgswidth(PhysicsModel):
             elif process == "qqH_s": return "qqH_s_funcWW"
             elif process == "qqH_b": return "qqH_b_funcWW"
             elif process == "qqH_sbi": return "qqH_sbi_funcWW"
-
-
+            
         else:
           if process == "ggH_s": return "ggH_s_func"
           elif process == "ggH_b": return "ggH_b_func"
@@ -45,6 +44,9 @@ class Higgswidth(PhysicsModel):
           elif process == "qqH_s": return "qqH_s_func"
           elif process == "qqH_b": return "qqH_b_func"
           elif process == "qqH_sbi": return "qqH_sbi_func"
+
+        if process in ["ggH_SM","qqH_SM","WH_SM","ZH_SM"]:
+          return "Zero"
 
         if process in ["ggH","ttH"]:
            print " bin= ",bin
@@ -117,6 +119,12 @@ class Higgswidth(PhysicsModel):
         """Create POI and other parameters, and define the POI set."""
  
         print "self.MHScaleWW = ",self.MHScaleWW
+
+        self.modelBuilder.doVar("Zero[0.,0.,1.]")
+        self.modelBuilder.out.var("Zero").setVal(0.)
+        self.modelBuilder.out.var("Zero").setConstant(True)
+
+
 
         self.modelBuilder.doVar("xsr_ggH[1.,0.,2.]")
         if self.MHScaleWW :

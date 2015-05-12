@@ -116,9 +116,7 @@ combineCards.py       hww_of2j=../../../datacards/HIG-14-032/125/hww-19.36fb.mH1
 
                       
          
-         
-         
-         
+          
          
          
          
@@ -338,6 +336,56 @@ mv higgsCombineTest.MultiDimFit.mH125.6.root   Asimov.higgsCombineTest.MultiDimF
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+combineCards.py       hww_of0j=../../../datacards/hww2l2v/125.6/hwwof_0j_shape_8TeV.txt \
+                      hww_of0j7TeV=../../../datacards/hww2l2v/125.6/hwwof_0j_shape_7TeV.txt \
+                      >   hwwlvlv_0jet-7TeV-8TeV.txt
+
+combineCards.py       hww_of1j=../../../datacards/hww2l2v/125.6/hwwof_1j_shape_8TeV.txt \
+                      hww_of1j7TeV=../../../datacards/hww2l2v/125.6/hwwof_1j_shape_7TeV.txt \
+                      >   hwwlvlv_1jet-7TeV-8TeV.txt
+
+combineCards.py       hww_of2j=../../../datacards/hww2l2v/125.6/hwwof_2j_shape_8TeV.txt \
+                      hww_of2j7TeV=../../../datacards/hww2l2v/125.6/hwwof_2j_shape_7TeV.txt \
+                      >   hwwlvlv_2jet-7TeV-8TeV.txt
+
+                      
+combineCards.py       hww_of0j=../../../datacards/hww2l2v/125.6/hwwof_0j_shape_8TeV.txt \
+                      hww_of0j7TeV=../../../datacards/hww2l2v/125.6/hwwof_0j_shape_7TeV.txt \
+                      hww_of1j=../../../datacards/hww2l2v/125.6/hwwof_1j_shape_8TeV.txt \
+                      hww_of1j7TeV=../../../datacards/hww2l2v/125.6/hwwof_1j_shape_7TeV.txt \
+                      hww_of2j=../../../datacards/hww2l2v/125.6/hwwof_2j_shape_8TeV.txt \
+                      hww_of2j7TeV=../../../datacards/hww2l2v/125.6/hwwof_2j_shape_7TeV.txt \
+                      >   hwwlvlv_012jet-7TeV-8TeV.txt
+
+         
+         
+text2workspace.py -m 125.6 hwwlvlv_0jet-7TeV-8TeV.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed   -o    model_standard_hwwlvlv_0j-7TeV-8TeV.root
+text2workspace.py -m 125.6 hwwlvlv_1jet-7TeV-8TeV.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed   -o    model_standard_hwwlvlv_1j-7TeV-8TeV.root
+text2workspace.py -m 125.6 hwwlvlv_2jet-7TeV-8TeV.txt        -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed   -o    model_standard_hwwlvlv_2j-7TeV-8TeV.root
+text2workspace.py -m 125.6 hwwlvlv_012jet-7TeV-8TeV.txt       -P LimitCombine.HiggsWidth.HiggsWidthKappaCustodialMHSscaleWWOriginal:higgswidth   --PO=is2l2nuGGsmRVRFfixed  -o    model_standard_hwwlvlv_012j-7TeV-8TeV.root
+
+
+
+
+
+
+         
 
 
 
