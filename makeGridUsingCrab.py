@@ -63,6 +63,8 @@ script.write("""
 #
 ##############################################################
 
+echo "Running combine ..."
+
 i="$1"
 if [ "$i" = "" ]; then
   echo "Error: missing job index"
