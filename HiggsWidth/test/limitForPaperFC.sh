@@ -43,6 +43,24 @@ python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     60    
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     60     -n  100    -o test      --lsf
 
 
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     1     -n  2    -o testA      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     1     2     -n  2    -o testB      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     2     3     -n  2    -o testC      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     3     4     -n  2    -o testD      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     4     5     -n  2    -o testE      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     5     6     -n  2    -o testF      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     6     7     -n  2    -o testG      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     7     8     -n  2    -o testH      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     8     9     -n  2    -o testI      --lsf   -j 10   -q 1nd
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     9    10     -n  2    -o testL      --lsf   -j 10   -q 1nd
+
+
+crab -create -cfg testA.cfg
+crab -submit -c crab_0_150521_111627
+crab -status -c crab_0_150521_111627
+
+
+
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     1     -n  2    -o test0      --lsf   -j 10
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     1     2     -n  2    -o test1      --lsf   -j 10
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     2     3     -n  2    -o test2      --lsf   -j 10
