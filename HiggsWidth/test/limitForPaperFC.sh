@@ -59,6 +59,11 @@ crab -create -cfg testA.cfg
 crab -submit -c crab_0_150521_111627
 crab -status -c crab_0_150521_111627
 
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     1     -n  2    -o testA2nd      --lsf   -j 10   -q 2nd
+crab -create -cfg testA2nd.cfg
+crab -submit -c crab_0_150521_152106
+crab -status -c crab_0_150521_152106
+
 
 
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     1     -n  2    -o test0      --lsf   -j 10
