@@ -65,6 +65,25 @@ crab -submit -c crab_0_150521_152106
 crab -status -c crab_0_150521_152106
 
 
+python makeGridUsingCrab.py   model_hwwlvlv_01j.root     0     40     -n  40    -o testA2nd01jet8TeV      --lsf   -j 10   -q 2nd
+crab -create -cfg testA2nd01jet8TeV.cfg
+crab -submit -c crab_0_150521_152506
+crab -status -c crab_0_150521_152506
+
+
+
+python makeGridUsingCrab.py   model_hwwlvlv_01j.root     0     40     -n  40    -o testA2nd01jet8TeV      --lsf   -j 10   -q 2nd  -O "--testStat=PL --rule=CLsplusb"
+crab -create -cfg testA2nd01jet8TeV.cfg
+crab -submit -c crab_0_150522_094840
+crab -status -c crab_0_150522_094840
+
+
+
+
+
+
+combine model_hwwlvlv_012j-7TeV-8TeV.root -M HybridNew --grid=testA2nd_4_1_2Ir.root
+
 
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     1     -n  2    -o test0      --lsf   -j 10
 python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     1     2     -n  2    -o test1      --lsf   -j 10
