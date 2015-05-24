@@ -79,7 +79,7 @@ crab -status -c crab_0_150522_094840
 
 
 
-
+--> 2nd ok timing!
 
 
 combine model_hwwlvlv_012j-7TeV-8TeV.root -M HybridNew --grid=testA2nd_4_1_2Ir.root
