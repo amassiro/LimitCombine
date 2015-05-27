@@ -72,6 +72,24 @@ hadd grid_7TeV-8TeV.root testA2nd_*.root
 combine model_hwwlvlv_012j-7TeV-8TeV.root -M HybridNew --grid=grid_7TeV-8TeV.root --testStat=PL --rule=CLsplusb
 
 
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     40     -n  40    -o testA2nd01jet7and8TeV      --lsf   -j 10   -q 2nd  -O "--testStat=PL --rule=CLsplusb"
+crab -create -cfg testA2nd01jet7and8TeV.cfg
+crab -submit -c crab_0_150525_103414
+crab -status -c crab_0_150525_103414
+rm testA2nd_*.root
+ls crab_0_150525_103414/res/out_files_*.tgz
+ls crab_0_150525_103414/res/out_files_*.tgz | awk '{print "tar -xf "$1}'
+
+python makeGridUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root     0     40     -n  40    -o testA1nw01jet7and8TeV      --lsf   -j 10   -q 1nw  -O "--testStat=PL --rule=CLsplusb"
+crab -create -cfg testA1nw01jet7and8TeV.cfg
+crab -submit -c crab_0_150527_110856
+crab -status -c crab_0_150527_110856
+rm testA2nd_*.root
+ls crab_0_150527_110856/res/out_files_*.tgz
+ls crab_0_150527_110856/res/out_files_*.tgz | awk '{print "tar -xf "$1}'
+
+
+
 python makeGridUsingCrab.py   model_hwwlvlv_01j.root     0     40     -n  40    -o testA2nd01jet8TeV      --lsf   -j 10   -q 2nd
 crab -create -cfg testA2nd01jet8TeV.cfg
 crab -submit -c crab_0_150521_152506
