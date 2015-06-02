@@ -149,3 +149,24 @@ crab -create -cfg test16.cfg
 ls -d crab_0_150521_*/ | awk '{print "crab -submit -c "$1}'
 ls -d crab_0_150521_*/ | awk '{print "crab -status -c "$1}'
 
+
+
+
+### toys as HWW tensor structure studies ###
+
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12345    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed0.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12346    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed1.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12347    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed2.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12348    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed3.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12349    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed4.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12340    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed5.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12341    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed6.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12342    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed7.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12343    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed8.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12344    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed9.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
+
+
+
+
+
+
