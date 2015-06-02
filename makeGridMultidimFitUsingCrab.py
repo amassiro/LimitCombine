@@ -104,8 +104,8 @@ for i,x in enumerate(points):
                 toys=toys,mass=options.mass
               ))
     else:
-      script.write("{cond} ./combine {wsp} -M MultiDimFit --algo=grid   {opts} -m {mass}  --toysNoSystematics    -t 100   --fork $nchild  -n {out} --saveToys -s {seed}\n".format(
-                wsp=workspace, opts=options.options, fork=options.fork,seed=seed, out=options.out, cond=interleave, mass=options.mass
+      script.write("{cond} ./combine {wsp} -M MultiDimFit --algo=grid   {opts} -m {mass}  --toysNoSystematics    -t 100    -n {out} --saveToys -s {seed}\n".format(
+                wsp=workspace, opts=options.options, seed=seed, out=options.out, cond=interleave, mass=options.mass
               ))
 
 script.write("\n");

@@ -169,8 +169,8 @@ combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --point
 
 python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan1     --lsf   -j  10    -q  8nh
 crab -create -cfg gridScan1.cfg
-crab -submit -c crab_0_150602_174359
-crab -status -c crab_0_150602_174359
+crab -submit -c crab_0_150602_174925
+crab -status -c crab_0_150602_174925
 bjobs
 
 source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh
