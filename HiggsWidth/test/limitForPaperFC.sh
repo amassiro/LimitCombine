@@ -167,10 +167,13 @@ combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --point
 combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12343    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed8.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
 combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12344    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed9.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
 
-python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan1     --lsf   -j  10    -q  8nh
+python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan1     --lsf   -j  10    -q  2nd
 crab -create -cfg gridScan1.cfg
-crab -submit -c crab_0_150602_174925
+crab -submit -c crab_0_150602_174925  ---> 8nh, not enough
 crab -status -c crab_0_150602_174925
+
+crab -submit -c crab_0_150603_145536
+crab -status -c crab_0_150603_145536
 bjobs
 
 source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh
