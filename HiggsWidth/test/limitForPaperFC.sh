@@ -200,8 +200,8 @@ crab -status -c crab_0_150604_162315
 
 python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan4   --options="--setPhysicsModelParameters CMS_zz4l_GGsm=20  "  --lsf   -j  10    -q  2nd
 crab -create -cfg gridScan4.cfg
-crab -submit -c crab_0_150604_162315
-crab -status -c crab_0_150604_162315
+crab -submit -c crab_0_150604_162902
+crab -status -c crab_0_150604_162902
 
 
 
