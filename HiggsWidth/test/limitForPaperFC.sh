@@ -172,13 +172,46 @@ crab -create -cfg gridScan1.cfg
 crab -submit -c crab_0_150602_174925  ---> 8nh, not enough
 crab -status -c crab_0_150602_174925
 
-crab -submit -c crab_0_150603_145536
+crab -submit -c crab_0_150603_145536  ---> 2nd --> ok!
 crab -status -c crab_0_150603_145536
 bjobs
+
+
+ls crab_0_150603_145536/res/out_files_*.tgz
+ls crab_0_150603_145536/res/out_files_*.tgz | awk '{print "tar -xf "$1}'
+-
+hadd grid_7TeV-8TeV-toysScan.root gridScan1_*.root
+
+
+
+python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan2   --options="--setPhysicsModelParameters CMS_zz4l_GGsm=5  "  --lsf   -j  10    -q  2nd
+crab -create -cfg gridScan2.cfg
+crab -submit -c crab_0_150604_161832
+crab -status -c crab_0_150604_161832
+
+
+
+
+python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan3   --options="--setPhysicsModelParameters CMS_zz4l_GGsm=10  "  --lsf   -j  10    -q  2nd
+crab -create -cfg gridScan3.cfg
+crab -submit -c crab_0_150604_162315
+crab -status -c crab_0_150604_162315
+
+
+python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan4   --options="--setPhysicsModelParameters CMS_zz4l_GGsm=20  "  --lsf   -j  10    -q  2nd
+crab -create -cfg gridScan4.cfg
+crab -submit -c crab_0_150604_162315
+crab -status -c crab_0_150604_162315
+
+
+
+
+
 
 source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh
 eval `scramv1 runtime -sh`
 source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh
+
 
 
 
