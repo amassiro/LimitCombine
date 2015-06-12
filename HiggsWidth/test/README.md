@@ -13,9 +13,7 @@ Everything in 2 scripts:
     sh HiggsWidth/test/limitAndPlotForPaper.sh
     
     draw plot and get numbers:
-    
-   
-    
+    sh HiggsWidth/test/PlotForPaper.sh
     
     
 OLD
