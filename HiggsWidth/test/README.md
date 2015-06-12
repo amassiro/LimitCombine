@@ -6,6 +6,21 @@ where:
     cd /afs/cern.ch/user/a/amassiro/work/Latinos/Limit/CMSSW_6_1_1/src/LimitCombine/
 
 
+
+Everything in 2 scripts:
+
+    create workspace and run likelihood scan:
+    sh HiggsWidth/test/limitAndPlotForPaper.sh
+    
+    draw plot and get numbers:
+    
+    
+    
+    
+OLD
+====
+    
+    
 Preparation:
 
     Higgs combine installation from
