@@ -2,13 +2,14 @@
 #include "tools.h"
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 //---- alsoSevenTeV
 //---- 1 = 7+8 TeV
 //---- 2 = 8   TeV
 //---- 3 = 7   TeV
 
-void drawExpObs(int alsoSevenTeV = 1, std::string category = "0j", float maxX = 25.0) {
+void drawExpObs(int alsoSevenTeV = 1, std::string category = "0j", float maxX = 15.0) {
  
  TCanvas *cc = new TCanvas("cc","",180,52,550,550);
  
@@ -117,32 +118,32 @@ void drawExpObs(int alsoSevenTeV = 1, std::string category = "0j", float maxX = 
  std::cout << " value_x_2sigma = " << value_x_2sigma << std::endl;
  
  
- TLine *line1 = new TLine(0.0,1.0,value_x_1sigma,1.0);
+ TLine *line1 = new TLine(0.0,1.0,std::min(1.*value_x_1sigma, 1.*maxX),1.0);
 //  TLine *line1 = new TLine(0.0,1.0,maxX,1.0);
  line1->SetLineWidth(1);
  line1->SetLineStyle(2);
  line1->SetLineColor(kBlue);
- line1->Draw(); 
+ if (value_x_1sigma > 0) line1->Draw(); 
  
- TLine *line2 = new TLine(0.0,3.84,value_x_2sigma,3.84);
+ TLine *line2 = new TLine(0.0,3.84,std::min(1.*value_x_2sigma, 1.*maxX),3.84);
 //  TLine *line2 = new TLine(0.0,3.84,maxX,3.84);
  line2->SetLineWidth(1);
  line2->SetLineStyle(2);
  line2->SetLineColor(kBlue);
- line2->Draw();
+ if (value_x_2sigma > 0) line2->Draw();
  
   
  TLine *vline1 = new TLine(value_x_1sigma,0.0,value_x_1sigma,1.0);
  vline1->SetLineWidth(1);
  vline1->SetLineStyle(2);
  vline1->SetLineColor(kBlue);
- vline1->Draw(); 
+ if (value_x_1sigma > 0 && value_x_1sigma < maxX) vline1->Draw(); 
  
  TLine *vline2 = new TLine(value_x_2sigma,0.0,value_x_2sigma,3.84);
  vline2->SetLineWidth(1);
  vline2->SetLineStyle(2);
  vline2->SetLineColor(kBlue);
- vline2->Draw();
+ if (value_x_2sigma > 0 && value_x_2sigma < maxX) vline2->Draw();
  
  
  
@@ -156,32 +157,32 @@ void drawExpObs(int alsoSevenTeV = 1, std::string category = "0j", float maxX = 
  std::cout << " value_x_2sigma_obs = " << value_x_2sigma_obs << std::endl;
  
  
- TLine *line1_obs = new TLine(0.0,1.0,value_x_1sigma_obs,1.0);
+ TLine *line1_obs = new TLine(0.0,1.0,std::min(1.*value_x_1sigma_obs, 1.*maxX),1.0);
  //  TLine *line1_obs = new TLine(0.0,1.0,maxX,1.0);
  line1_obs->SetLineWidth(1);
  line1_obs->SetLineStyle(1);
  line1_obs->SetLineColor(kBlack);
- line1_obs->Draw(); 
+ if (value_x_1sigma_obs > 0) line1_obs->Draw(); 
  
- TLine *line2_obs = new TLine(0.0,3.84,value_x_2sigma_obs,3.84);
+ TLine *line2_obs = new TLine(0.0,3.84,std::min(1.*value_x_2sigma_obs, 1.*maxX),3.84);
  //  TLine *line2_obs = new TLine(0.0,3.84,maxX,3.84);
  line2_obs->SetLineWidth(1);
  line2_obs->SetLineStyle(1);
  line2_obs->SetLineColor(kBlack);
- line2_obs->Draw();
+ if (value_x_2sigma_obs > 0) line2_obs->Draw();
  
  
  TLine *vline1_obs = new TLine(value_x_1sigma_obs,0.0,value_x_1sigma_obs,1.0);
  vline1_obs->SetLineWidth(1);
  vline1_obs->SetLineStyle(1);
  vline1_obs->SetLineColor(kBlack);
- vline1_obs->Draw(); 
+ if (value_x_1sigma_obs > 0 && value_x_1sigma_obs < maxX) vline1_obs->Draw(); 
  
  TLine *vline2_obs = new TLine(value_x_2sigma_obs,0.0,value_x_2sigma_obs,3.84);
  vline2_obs->SetLineWidth(1);
  vline2_obs->SetLineStyle(1);
  vline2_obs->SetLineColor(kBlack);
- vline2_obs->Draw();
+ if (value_x_2sigma_obs > 0 && value_x_2sigma_obs < maxX) vline2_obs->Draw();
  
  gPad->SetGrid();
  

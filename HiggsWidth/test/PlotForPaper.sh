@@ -26,6 +26,7 @@ mv cc.png   2j.8TeV.png
 root -l -q Asimov.higgsCombineTest.MultiDimFit.01j.StandardModel.root \
            Observed.higgsCombineTest.MultiDimFit.01j.StandardModel.root \
            HiggsWidth/test/drawExpObs.cxx\(2,\"01j\ \ \"\)
+
 mv cc.png   01j.8TeV.png
 
 root -l -q Asimov.higgsCombineTest.MultiDimFit.012j.StandardModel.root \
