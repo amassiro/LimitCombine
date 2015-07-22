@@ -167,6 +167,85 @@ combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --point
 combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12343    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed8.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
 combine -M MultiDimFit    model_hwwlvlv_012j-7TeV-8TeV.root  --algo=grid --points 200  -m 125.6   --toysNoSystematics    -t 100    -s 12344    -n Toys.higgsCombineTest.MultiDimFit.012j-7TeV-8TeV.seed9.root           --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.000001,100               --verbose -1     
 
+
+
+
+
+
+
+source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh
+
+python makeGridMultidimFitUsingCrab.py   hwidth_all_lt_HiggsWidthLT.root       -o  hwidth_all_lt_HiggsWidthLT_scan       --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hww_HiggsWidthLT.root          -o  hwidth_hww_HiggsWidthLT_scan          --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+
+crab -create -cfg  hwidth_all_lt_HiggsWidthLT_scan.cfg
+crab -create -cfg  hwidth_hww_HiggsWidthLT_scan.cfg
+
+crab -submit -c crab_0_150721_185051
+crab -submit -c crab_0_150721_185103
+
+
+ls crab_0_150721_185051/res/out_files_*.tgz
+ls crab_0_150721_185051/res/out_files_*.tgz | awk '{print "tar -xf "$1}'
+hadd hwidth_all_lt_HiggsWidthLT.scan.root hwidth_all_lt_HiggsWidthLT_scan_*.root
+
+ls crab_0_150721_185103/res/out_files_*.tgz | awk '{print "tar -xf "$1}'
+hadd hwidth_hww_HiggsWidthLT.scan.root hwidth_hww_HiggsWidthLT_scan_*.root
+
+
+python makeGridMultidimFitUsingCrab.py   hwidth_hww_MuOffShellLT.root          -o  hwidth_hww_MuOffShellLT_scan          --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hww_HiggsWidthLT.root          -o  hwidth_hww_HiggsWidthLT_scan          --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hzz4l_lt_HiggsWidthLT.root     -o  hwidth_hzz4l_lt_HiggsWidthLT_scan     --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA,pdf_qqbar --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hzz2l2nu_lt_HiggsWidthLT.root  -o  hwidth_hzz2l2nu_lt_HiggsWidthLT_scan  --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hzz_lt_HiggsWidthLT.root       -o  hwidth_hzz_lt_HiggsWidthLT_scan       --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hzz_lt_MuOffShellLT.root       -o  hwidth_hzz_lt_MuOffShellLT_scan       --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hzz4l_lt_MuOffShellLT.root     -o  hwidth_hzz4l_lt_MuOffShellLT_scan     --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA,pdf_qqbar --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_hzz2l2nu_lt_MuOffShellLT.root  -o  hwidth_hzz2l2nu_lt_MuOffShellLT_scan  --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+python makeGridMultidimFitUsingCrab.py   hwidth_all_lt_MuOffShellLT.root       -o  hwidth_all_lt_MuOffShellLT_scan       --options="--saveNLL --redefineSignalPOIs CMS_zz4l_GGsm --setPhysicsModelParameters RV=1,RF=1 --freezeNuisances CMS_zz4l_fai1,CMS_zz4l_bkgMELA           --floatOtherPOI=1  --expectSignal=1  --minimizerAlgo=Minuit --minimizerAlgoForMinos=Minuit --minimizerStrategy=1 --cminFallbackAlgo Minuit,1:0.001 --setPhysicsModelParameterRanges CMS_zz4l_GGsm=0.001,60 --points=60 --firstPoint 0 --lastPoint 5"     --lsf   -j  10    -q  2nd
+ 
+
+
+
+
+
+hwidth_hww_MuOffShellLT.root
+hwidth_hww_HiggsWidthLT.root
+hwidth_hzz4l_lt_HiggsWidthLT.root
+hwidth_hzz2l2nu_lt_HiggsWidthLT.root
+hwidth_hzz_lt_HiggsWidthLT.root
+hwidth_hzz_lt_MuOffShellLT.root
+hwidth_hzz4l_lt_MuOffShellLT.root
+hwidth_hzz2l2nu_lt_MuOffShellLT.root
+hwidth_all_lt_HiggsWidthLT.root
+hwidth_all_lt_MuOffShellLT.root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 python makeGridMultidimFitUsingCrab.py   model_hwwlvlv_012j-7TeV-8TeV.root  -o  gridScan1     --lsf   -j  10    -q  2nd
 crab -create -cfg gridScan1.cfg
 crab -submit -c crab_0_150602_174925  ---> 8nh, not enough
