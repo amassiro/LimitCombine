@@ -24,7 +24,7 @@ parser.add_option("-s", "--smart",    dest="smart",     default=False, action="s
 parser.add_option("-S", "--signif",   dest="signif",     default=False, action="store_true", help="Compute significance. You should set min = 1, max = 1")
 parser.add_option("-u", "--uidir",    dest="uidir", default="", help="Sepcify a CRAB UI directory.  If not provided using the normal crab_0_timestamp")
 parser.add_option("-d", "--diagnosticRun", dest="diagnosticRun", default=False ,action="store_true",help="Run MaxLikelihoodFit with toys for diagnostic studies")
-parser.add_option("-m", "--mass",     dest="mass",      default=120, type="float",help="Hypothesis mass (mH)")
+parser.add_option("-m", "--mass",     dest="mass",      default=125.6, type="float",help="Hypothesis mass (mH)")
 #parser.add_option("--fork",           dest="fork",     default=1,   type="int",  help="Cores to use (leave to 1)") # no fork in batch jobs for now
 (options, args) = parser.parse_args()
 if len(args) != 1:
